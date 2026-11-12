@@ -11,8 +11,8 @@ locale: en_US
 # preview runs at http://localhost:4000/. Set them only if you host elsewhere.
 
 creators:
-  - "Ahmad Firdaus"
   - "Ricky Saif"
+  - "Ahmad Firdaus"
 # google_site_verification: # paste the code from Google Search Console
 
 plugins:

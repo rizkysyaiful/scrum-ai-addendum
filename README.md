@@ -1,6 +1,6 @@
 # Scrum: AI Addendum
 
-Website for the proposed "Scrum: AI Addendum", created by Ahmad Firdaus and Ricky Saif.
+Website for the proposed "Scrum: AI Addendum", created by Ricky Saif and Ahmad Firdaus.
 English at `/`, Bahasa Indonesia at `/id/`. Built with Jekyll, hosted on GitHub Pages
 (no build step of your own: GitHub builds it on every push).
 
