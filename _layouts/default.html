@@ -1,0 +1,86 @@
+<!doctype html>
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data[lang] -%}
+{%- assign home_url = t.home | relative_url -%}
+{%- if page.ref -%}
+  {%- assign alts = site.pages | concat: site.posts | where: "ref", page.ref -%}
+{%- else -%}
+  {%- assign alts = "" | split: "" -%}
+{%- endif -%}
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.layout == "home" %}{{ page.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+  {% seo title=false %}
+  {%- for a in alts %}
+  <link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url | absolute_url }}">
+  {%- if a.lang == "en" %}
+  <link rel="alternate" hreflang="x-default" href="{{ a.url | absolute_url }}">
+  {%- endif -%}
+  {%- endfor %}
+  {% feed_meta %}
+  {%- if site.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  {%- endif %}
+  <meta name="author" content="{{ site.creators | join: ', ' }}">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"{% if page.layout == 'post' %}BlogPosting{% else %}CreativeWork{% endif %}","@id":"{{ page.url | absolute_url }}#work","name":{{ page.title | jsonify }},"headline":{{ page.title | jsonify }},"inLanguage":"{{ lang }}","url":"{{ page.url | absolute_url }}"{% if page.date %},"datePublished":"{{ page.date | date_to_xmlschema }}"{% endif %},"author":[{% for c in site.creators %}{"@type":"Person","name":{{ c | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],"isBasedOn":{"@type":"CreativeWork","name":"The Scrum Guide (November 2020)","url":"{{ site.data.guide.url }}"}}
+  </script>
+  <meta name="theme-color" content="#0c3326">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&family=Caveat:wght@500;700&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body class="page-{{ page.layout }}">
+  <a class="skip" href="#main">{{ t.skip }}</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="{{ home_url }}" aria-label="{{ site.title }}">
+        <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><ellipse cx="16" cy="16" rx="13" ry="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="26" r="4" class="brand-ball"/></svg>
+        <span>Scrum: <b>AI Addendum</b></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a class="nav-sec" href="{{ home_url }}#shift">{{ t.nav.shift }}</a>
+        <a class="nav-sec" href="{{ home_url }}#risk">{{ t.nav.risk }}</a>
+        <a class="nav-sec" href="{{ home_url }}#length">{{ t.nav.length }}</a>
+        <a class="nav-sec" href="{{ home_url }}#additions">{{ t.nav.additions }}</a>
+        <a class="nav-sec" href="{{ home_url }}#proof">{{ t.nav.proof }}</a>
+        <a href="{{ t.blog_url | relative_url }}">{{ t.nav.blog }}</a>
+      </nav>
+      <div class="lang" role="group" aria-label="{{ t.nav.language }}">
+        {%- assign langs = "en,id" | split: "," -%}
+        {%- for l in langs -%}
+          {%- assign href = site.data[l].home | relative_url -%}
+          {%- for a in alts -%}{%- if a.lang == l -%}{%- assign href = a.url | relative_url -%}{%- endif -%}{%- endfor -%}
+          <a href="{{ href }}" hreflang="{{ l }}" lang="{{ l }}" title="{{ site.data[l].lang_name }}"{% if l == lang %} aria-current="true"{% endif %}>{{ l | upcase }}</a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+{{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>
+        <p class="foot-name">Scrum: AI Addendum</p>
+        <p>{{ t.footer.line }}</p>
+        <p class="foot-by">{{ t.created_by }} <b>{{ site.creators | join: "</b> &amp; <b>" }}</b></p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="{{ t.blog_url | relative_url }}">{{ t.nav.blog }}</a>
+        <a href="{{ site.data.guide.url }}" rel="noopener">{{ t.footer.guide }}</a>
+        <a href="{{ '/feed.xml' | relative_url }}">{{ t.footer.feed }}</a>
+      </nav>
+      <p class="foot-legal">{{ t.footer.license }}</p>
+    </div>
+  </footer>
+  <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+</body>
+</html>

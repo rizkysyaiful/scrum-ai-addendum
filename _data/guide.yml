@@ -1,0 +1,74 @@
+# Verbatim passages from the Scrum Guide, November 2020.
+# (c) 2020 Ken Schwaber and Jeff Sutherland, CC BY-SA 4.0.
+# Do not edit the text: every passage must match the Guide word for word.
+url: "https://scrumguides.org/scrum-guide.html"
+license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+quotes:
+  planning_why:
+    section: "Sprint Planning"
+    anchor: "topic-one-why-is-this-sprint-valuable"
+    text: "The whole Scrum Team then collaborates to define a Sprint Goal that communicates why the Sprint is valuable to stakeholders."
+  goal_single:
+    section: "Commitment: Sprint Goal"
+    anchor: "commitment-sprint-goal"
+    text: "The Sprint Goal is the single objective for the Sprint. Although the Sprint Goal is a commitment by the Developers, it provides flexibility in terms of the exact work needed to achieve it."
+  shorter:
+    section: "The Sprint"
+    anchor: "the-sprint"
+    text: "Shorter Sprints can be employed to generate more learning cycles and limit risk of cost and effort to a smaller time frame."
+  fixed_length:
+    section: "The Sprint"
+    anchor: "the-sprint"
+    text: "They are fixed length events of one month or less to create consistency."
+  review_purpose:
+    section: "Sprint Review"
+    anchor: "sprint-review"
+    text: "The purpose of the Sprint Review is to inspect the outcome of the Sprint and determine future adaptations."
+  review_working:
+    section: "Sprint Review"
+    anchor: "sprint-review"
+    text: "The Sprint Review is a working session and the Scrum Team should avoid limiting it to a presentation."
+  po_one:
+    section: "Product Owner"
+    anchor: "product-owner"
+    text: "The Product Owner is one person, not a committee."
+  po_delegate:
+    section: "Product Owner"
+    anchor: "product-owner"
+    text: "The Product Owner may do the above work or may delegate the responsibility to others. Regardless, the Product Owner remains accountable."
+  dev_def:
+    section: "Developers"
+    anchor: "developers"
+    text: "Developers are the people in the Scrum Team that are committed to creating any aspect of a usable Increment each Sprint."
+  inc_early:
+    section: "Increment"
+    anchor: "increment"
+    text: "However, an Increment may be delivered to stakeholders prior to the end of the Sprint. The Sprint Review should never be considered a gate to releasing value."
+  sm_barriers:
+    section: "Scrum Master"
+    anchor: "scrum-master"
+    text: "Removing barriers between stakeholders and Scrum Teams."
+  empiricism:
+    section: "Scrum Theory"
+    anchor: "scrum-theory"
+    text: "Empiricism asserts that knowledge comes from experience and making decisions based on what is observed."
+  dod_def:
+    section: "Commitment: Definition of Done"
+    anchor: "commitment-definition-of-done"
+    text: "The Definition of Done is a formal description of the state of the Increment when it meets the quality measures required for the product."
+  inc_verified:
+    section: "Increment"
+    anchor: "increment"
+    text: "Each Increment is additive to all prior Increments and thoroughly verified, ensuring that all Increments work together."
+  dod_not_met:
+    section: "Commitment: Definition of Done"
+    anchor: "commitment-definition-of-done"
+    text: "If a Product Backlog item does not meet the Definition of Done, it cannot be released or even presented at the Sprint Review."
+  immutable:
+    section: "End Note"
+    anchor: "end-note"
+    text: "The Scrum framework, as outlined herein, is immutable. While implementing only parts of Scrum is possible, the result is not Scrum. Scrum exists only in its entirety and functions well as a container for other techniques, methodologies, and practices."
+  incomplete:
+    section: "Scrum Definition"
+    anchor: "scrum-definition"
+    text: "The Scrum framework is purposefully incomplete, only defining the parts required to implement Scrum theory. Scrum is built upon by the collective intelligence of the people using it."

@@ -1,0 +1,8 @@
+{%- assign q = site.data.guide.quotes[include.key] -%}
+<figure class="gq{% if include.big %} gq-big{% endif %}">
+  <blockquote lang="en" cite="{{ site.data.guide.url }}#{{ q.anchor }}"><p>“{{ q.text }}”</p></blockquote>
+  {%- if include.t.gloss[include.key] %}
+  <p class="gq-gloss"><span>{{ include.t.additions.gloss_label }}:</span> {{ include.t.gloss[include.key] }}</p>
+  {%- endif %}
+  <figcaption>{{ include.t.additions.source_label }} · <a href="{{ site.data.guide.url }}#{{ q.anchor }}" rel="noopener">{{ q.section }}</a></figcaption>
+</figure>

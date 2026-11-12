@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{%- assign t = site.data[page.lang] -%}
+{%- assign other = site.posts | where: "ref", page.ref | where_exp: "p", "p.lang != page.lang" | first -%}
+<article class="post">
+  <header class="page-head dark">
+    <div class="wrap narrow">
+      <p class="kicker"><a href="{{ t.blog_url | relative_url }}">← {{ t.blog.back }}</a></p>
+      <h1 class="page-title">{{ page.title }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+        · {{ page.author | default: site.creators | join: ' & ' }}
+        {%- if other and page.ref %} · <a href="{{ other.url | relative_url }}" hreflang="{{ other.lang }}">{{ t.blog.other_lang }}</a>{% endif %}
+      </p>
+    </div>
+  </header>
+  <div class="paper">
+    <div class="wrap narrow prose">
+{{ content }}
+    </div>
+    <div class="wrap narrow">
+      <aside class="post-cta">
+        <div>
+          <p class="post-cta-title">{{ t.blog.cta_title }}</p>
+          <p>{{ t.blog.cta_body }}</p>
+        </div>
+        <a class="btn btn-ink" href="{{ t.home | relative_url }}">{{ t.blog.read_addendum }} →</a>
+      </aside>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,39 @@
+title: "Scrum: AI Addendum"
+tagline: "AI helps enable the ideal Scrum"
+description: >-
+  A proposed addendum to the Scrum Guide for teams where AI does most of the
+  implementation. Four additions, each checked against the Scrum Guide.
+lang: en
+locale: en_US
+
+# url and baseurl are left unset on purpose. GitHub Pages fills them in
+# automatically (user site, project site or custom domain), and local
+# preview runs at http://localhost:4000/. Set them only if you host elsewhere.
+
+creators:
+  - "Ahmad Firdaus"
+  - "Ricky Saif"
+# google_site_verification: # paste the code from Google Search Console
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope: { path: "" }
+    values: { image: /assets/og.png }
+  - scope: { path: "_posts/en", type: posts }
+    values: { layout: post, lang: en, locale: en_US, permalink: "/blog/:title/" }
+  - scope: { path: "_posts/id", type: posts }
+    values: { layout: post, lang: id, locale: id_ID, permalink: "/id/blog/:title/" }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - new-post.sh
+  - vendor

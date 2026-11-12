@@ -1,0 +1,269 @@
+lang_name: "English"
+home: "/"
+blog_url: "/blog/"
+created_by: "Created by"
+skip: "Skip to content"
+
+nav:
+  shift: "The shift"
+  risk: "The risk"
+  length: "Sprint length"
+  additions: "The four additions"
+  proof: "Guide check"
+  blog: "Blog"
+  language: "Language"
+
+hero:
+  eyebrow: "A proposed addendum to the 2020 Scrum Guide"
+  name: "Scrum: AI Addendum"
+  tagline: "AI helps enable the ideal Scrum."
+  lede: >-
+    AI now does almost all of the work of turning an idea into a working
+    product. That doesn’t replace Scrum. It clears away the workarounds that
+    kept teams from practicing Scrum as written.
+  cta_primary: "See the four additions"
+  cta_secondary: "Check it against the Scrum Guide"
+  loop:
+    label: "Diagram of the learning loop: next business outcome, build, in users’ hands, validate business outcome. With AI the build step passes quickly, so the time goes to users."
+    idea: "Next"
+    build: "Build"
+    use: "In users’ hands"
+    learn: "Validate"
+    idea_note: "business outcome"
+    learn_note: "business outcome"
+    build_note: "mostly AI now"
+    use_note: "your time goes here"
+    center: "the learning loop"
+
+shift:
+  kicker: "The shift"
+  title: "When building stops being the bottleneck, every accountability moves closer to the user."
+  intro: >-
+    Scrum has three accountabilities, and none of them is “type the code”.
+    With AI taking over implementation, each one can do what the Scrum Guide
+    describes.
+  before: "Before"
+  now: "With AI"
+  roles:
+    - token: "PO"
+      role: "Product Owner"
+      before: "Often a proxy or a scribe, turning requests into tickets detailed enough for a long build."
+      now: "Someone with both the power and the attention for the product: senior enough to be laser-focused on business goals and business metrics, with no proxy or scribe in between. Willing to host the Sprint Review every Sprint, whether that is two weeks or a month, to evaluate the business and set the next business outcomes."
+    - token: "Dev"
+      role: "Developers"
+      before: "Most of the Sprint goes into implementation detail."
+      now: "Pushed toward higher-level, more abstract thinking, which leaves more bandwidth and empathy for users."
+    - token: "SM"
+      role: "Scrum Master"
+      before: "Much of the energy goes to keeping a long delivery process moving."
+      now: "Free to focus on facilitating the interaction between Developers and users, the place where assumptions are validated and value is created."
+
+risk:
+  kicker: "The risk"
+  title: "AI speed without users is Waterfall, only faster."
+  intro: >-
+    Building gets fast. If the habit of meeting users stays the same, once
+    per Sprint Review, the freed-up time does not stay free. Watch what fills
+    it.
+  prev: "Previous step"
+  next: "Next step"
+  track_label: "One Sprint"
+  before: "Before AI"
+  after: "With AI"
+  stages:
+    plan: "Plan"
+    build: "Build"
+    test: "Manual Test"
+  n3: "3 items"
+  n9: "9 items"
+  n39: "3 of 9"
+  review: "Sprint Review"
+  users: "users"
+  reclaimed: "time reclaimed"
+  batch: "6 of 9 items untested"
+  steps:
+    - "Before AI: three items are planned, built and manually tested. Users see them at the Sprint Review."
+    - "AI arrives. Building the same three items takes a fraction of the Sprint."
+    - "The habit stays: users still see the work only at the Sprint Review."
+    - "So building grows back to fill the Sprint, now with nine items."
+    - "Manual testing has the same people as before, so only three of nine get tested. Six untested items: less confidence to show users at all."
+    - "AI-powered development + pre-AI Scrum habits = Waterfall, faster."
+  board:
+    title: "The same story on a whiteboard"
+    habit: "habit unchanged: users only at the Review"
+    notes:
+      - "Build speed ↑"
+      - "Spare time in the Sprint ↑"
+      - "Items per Sprint ↑"
+      - "Items manual testing can’t cover ↑"
+      - "Confidence to show users ↓"
+      - "Inertia to meet users ↑"
+    loop: "R"
+    loop_note: "reinforcing loop"
+    verdict: "= Waterfall, faster"
+  note: "An illustration of the mechanism, not measured data."
+
+length:
+  kicker: "Sprint length"
+  title: "That is also why shortening the Sprint is the wrong move."
+  intro: >-
+    With AI, building and testing are quick. The scarce thing in a Sprint is
+    no longer build time; it is rounds with users. A Sprint needs room for
+    the Developers to go to users, validate the assumptions about value,
+    rebuild the solution, and go again, several times if needed, until the
+    business outcome is reached.
+  short: "Shortened Sprint"
+  full: "Full Sprint"
+  round: "Round"
+  build: "build"
+  users: "users"
+  learn: "learn"
+  outcome_hit: "Business outcome reached"
+  outcome_miss: "Business outcome not reached"
+  review: "Sprint Review"
+  talk_short: "The talk is about timeline: “Is it done? When?”"
+  talk_full: "The talk is about value: profit, loss, user engagement."
+  po_short: "The real Product Owner has no reason to attend."
+  po_full: "The real Product Owner has every reason to attend."
+  counter: "Rounds with users"
+  columns:
+    - title: "Pre-AI Scrum"
+      body: "Building took the whole Sprint, so the Sprint Review was mostly about timeline and output. The real Product Owner had little incentive to attend, and the proxy or scribe Product Owner was born."
+    - title: "AI + full Sprint"
+      body: "Several rounds with users fit in one Sprint, so the business outcome can actually be reached and the Review becomes a conversation about profit, loss and engagement. That is a conversation the real Product Owner wants to be in."
+    - title: "AI + shortened Sprint"
+      body: "Fewer rounds with users fit, the outcome is cut short, and the Review slides back to timeline talk. The speed gain is spent on more meetings instead of more validation."
+  fit: >-
+    The Scrum Guide sets a ceiling of one month and leaves the length to the
+    team. The addendum uses that room: keep the Sprint long enough for
+    several rounds with users, and make the Sprint Review a working session
+    about the business outcome.
+  note: "An illustration of the mechanism, not measured data."
+
+additions:
+  kicker: "The addendum"
+  title: "Four additions. Nothing removed."
+  intro: >-
+    Each addition is a practice that fits inside Scrum as written. Next to
+    each one is the passage of the Scrum Guide it builds on, quoted word for
+    word.
+  guide_label: "What the Scrum Guide says"
+  fit_label: "How it fits"
+  source_label: "Scrum Guide 2020"
+  items:
+    - title: "The Sprint Goal is a business outcome, with a spare one ready."
+      body: >-
+        State the Sprint Goal as a change in the business or in what users do,
+        never as a list of things to build. Because AI can get you there days
+        early, agree on one optional spare outcome during Sprint Planning. It
+        only comes into play if the Sprint Goal is achieved before the Sprint
+        Review.
+      example:
+        label: "Example"
+        rows:
+          - k: "Instead of"
+            v: "Build the referral page."
+            strike: true
+          - k: "Sprint Goal"
+            v: "20 existing customers each invite a friend."
+          - k: "Spare outcome"
+            v: "The first invited friend completes a purchase."
+      quotes: [planning_why, goal_single, review_purpose]
+      fit: >-
+        The spare outcome is not a second Sprint Goal. The Sprint keeps its
+        single objective; the spare is the next most valuable outcome, agreed
+        in advance so the team doesn’t drift into unplanned work when it
+        finishes early. Finishing early is not a reason to shorten the
+        Sprint; it is room for another round with users.
+    - title: "A proxy or scribe Product Owner learns to develop."
+      body: >-
+        If your team has someone who relays the real decision-maker’s wishes,
+        or who mainly writes tickets, that translation layer is what AI
+        shrinks the most. Their product knowledge is too valuable to lose. The
+        move is to become a Developer: someone who turns that knowledge
+        directly into usable Increments, with AI doing the typing. The Product
+        Owner accountability goes to the one person who truly owns the
+        business outcome.
+      quotes: [po_one, po_delegate, dev_def]
+      fit: >-
+        The Scrum Guide has no proxy or scribe role. It has one Product Owner
+        who stays accountable, and Developers who create the Increment. This
+        addition moves people back into those two accountabilities.
+    - title: "The Scrum Master pushes for updates to reach users as soon as possible."
+      body: >-
+        The Scrum Master keeps asking one question: who has used this yet?
+        Every finished update should reach real users as early as it safely
+        can, not wait for the Sprint Review. Otherwise AI speed pulls the
+        whole organization into ever bigger piles of assumptions, just like in
+        the Waterfall era.
+      quotes: [inc_early, sm_barriers, empiricism]
+      fit: >-
+        The Guide already says the Sprint Review is not a release gate, and
+        already asks the Scrum Master to remove barriers between stakeholders
+        and the Scrum Team. With AI, that service moves to the centre of the
+        job.
+    - title: "A technical safety net strong enough for AI speed."
+      body: >-
+        Speed only helps if it is safe. Before a team leans on AI-paced
+        delivery, it needs a safety net that catches what people no longer
+        read line by line. For example: automated tests, continuous
+        integration, staged or flagged releases, monitoring and quick
+        rollback. Write it into the Definition of Done, so it is never
+        optional.
+      quotes: [dod_def, inc_verified, dod_not_met]
+      fit: >-
+        The Guide leaves the content of the Definition of Done to the team and
+        its organization. This addition says what it must be strong enough
+        for.
+
+proof:
+  kicker: "The check"
+  title: "Is this still Scrum? Yes, in its entirety."
+  intro: >-
+    The Scrum Guide is strict about one thing: you cannot remove or change its
+    parts and still call the result Scrum. It is just as clear that Scrum is
+    meant to hold other practices inside it.
+  table_title: "What the addendum changes"
+  unchanged: "Unchanged"
+  rows:
+    - k: "Accountabilities"
+      d: "Product Owner, Scrum Master, Developers"
+    - k: "Events"
+      d: "Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective"
+    - k: "Artifacts and commitments"
+      d: "Product Backlog, Sprint Backlog, Increment; Product Goal, Sprint Goal, Definition of Done"
+  added_k: "Practices inside the framework"
+  added_d: "The four additions above"
+  added_v: "Four added"
+  source: >-
+    All quotations are word for word from the Scrum Guide, November 2020, by
+    Ken Schwaber and Jeff Sutherland, the current version at the time of
+    writing, used under the Creative Commons Attribution Share-Alike 4.0
+    license. This addendum is an independent proposal. It is not affiliated
+    with or endorsed by the authors of the Scrum Guide.
+  read_guide: "Read the full Scrum Guide"
+
+blog:
+  kicker: "Blog"
+  title: "Notes on practicing Scrum with AI"
+  intro: "Field notes, examples and arguments behind the addendum."
+  all: "All posts"
+  empty: "The first post is on its way."
+  back: "All posts"
+  read_addendum: "Read the addendum"
+  other_lang: "Baca dalam Bahasa Indonesia"
+  cta_title: "This post is part of Scrum: AI Addendum."
+  cta_body: "Four additions to Scrum for teams where AI does most of the building, each checked against the Scrum Guide."
+
+footer:
+  line: "A proposed addendum, open for discussion."
+  guide: "Scrum Guide"
+  feed: "RSS feed"
+  license: >-
+    Scrum Guide quotations © 2020 Ken Schwaber and Jeff Sutherland, CC BY-SA
+    4.0. Independent proposal, not endorsed by the authors of the Scrum Guide.
+
+notfound:
+  title: "Page not found"
+  body: "This page isn’t here. The addendum is."
+  cta: "Go to the addendum"

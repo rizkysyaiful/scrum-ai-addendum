@@ -1,0 +1,16 @@
+{%- assign posts = site.posts | where: "lang", include.lang -%}
+{%- if posts.size == 0 -%}
+<p class="empty">{{ include.t.blog.empty }}</p>
+{%- else -%}
+<ol class="posts">
+  {%- for post in posts limit: include.limit %}
+  <li class="reveal">
+    <a href="{{ post.url | relative_url }}">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.description | default: post.excerpt | strip_html | truncate: 170 }}</p>
+    </a>
+  </li>
+  {%- endfor %}
+</ol>
+{%- endif -%}

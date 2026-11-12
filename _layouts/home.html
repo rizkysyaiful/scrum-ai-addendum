@@ -1,0 +1,261 @@
+---
+layout: default
+---
+{%- assign t = site.data[page.lang] -%}
+<section class="hero dark">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1><span class="h1-name">{{ t.hero.name }}</span> <span class="h1-tag">{{ t.hero.tagline }}</span></h1>
+      <p class="kicker">{{ t.hero.eyebrow }}</p>
+      <p class="lede">{{ t.hero.lede }}</p>
+      <p class="byline">{{ t.created_by }} <b>{{ site.creators | join: "</b> &amp; <b>" }}</b></p>
+    </div>
+    <div class="loop" id="loop" role="img" aria-label="{{ t.hero.loop.label }}">
+      <svg viewBox="0 0 500 400" aria-hidden="true">
+        <ellipse class="loop-inner" cx="250" cy="200" rx="118" ry="82"/>
+        <path class="loop-track" id="loop-path" pathLength="100" d="M250 40 A215 160 0 1 1 249.9 40"/>
+        <path class="loop-hot" pathLength="100" d="M250 40 A215 160 0 1 1 249.9 40"/>
+        <g class="loop-stations">
+          <circle cx="250" cy="40" r="9"/><circle cx="465" cy="200" r="9"/><circle cx="250" cy="360" r="9"/><circle cx="35" cy="200" r="9"/>
+        </g>
+        <g id="loop-trail"></g>
+        <circle id="loop-ball" class="loop-ball" r="10" cx="250" cy="360"/>
+      </svg>
+      <p class="st st-idea" data-st="0">{{ t.hero.loop.idea }}<small>{{ t.hero.loop.idea_note }}</small></p>
+      <p class="st st-build" data-st="1">{{ t.hero.loop.build }}<small>{{ t.hero.loop.build_note }}</small></p>
+      <p class="st st-use" data-st="2">{{ t.hero.loop.use }}<small>{{ t.hero.loop.use_note }}</small></p>
+      <p class="st st-learn" data-st="3">{{ t.hero.loop.learn }}<small>{{ t.hero.loop.learn_note }}</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="shift paper" id="shift">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="kicker">{{ t.shift.kicker }}</p>
+      <h2>{{ t.shift.title }}</h2>
+      <p class="sec-intro">{{ t.shift.intro }}</p>
+    </header>
+    <div class="roles">
+      {%- for r in t.shift.roles %}
+      <article class="role reveal">
+        <span class="token" aria-hidden="true">{{ r.token }}</span>
+        <h3>{{ r.role }}</h3>
+        <dl>
+          <div class="was"><dt>{{ t.shift.before }}</dt><dd>{{ r.before }}</dd></div>
+          <div class="now"><dt>{{ t.shift.now }}</dt><dd>{{ r.now }}</dd></div>
+        </dl>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="risk dark" id="risk">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="kicker">{{ t.risk.kicker }}</p>
+      <h2>{{ t.risk.title }}</h2>
+      <p class="sec-intro">{{ t.risk.intro }}</p>
+    </header>
+    <div class="demo reveal" id="demo" data-step="0">
+      <div class="stepper">
+        <button type="button" class="step-btn" data-dir="-1" aria-label="{{ t.risk.prev }}">‹</button>
+        <div class="step-body">
+  <ol class="captions" aria-live="polite">
+          {%- for c in t.risk.steps %}
+          <li class="cap{% if forloop.last %} cap-verdict{% endif %}" data-cap="{{ forloop.index0 }}">{{ c }}</li>
+          {%- endfor %}
+        </ol>
+          <p class="step-count"><span data-step-n>1</span> / {{ t.risk.steps.size }}</p>
+        </div>
+        <button type="button" class="step-btn" data-dir="1" aria-label="{{ t.risk.next }}">›</button>
+      </div>
+      <div class="demo-grid">
+        <div class="tracks">
+          {%- assign rows = "before,after" | split: "," -%}
+          {%- for row in rows %}
+          <div class="track track-{{ row }}">
+            <p class="tr-head"><b>{{ t.risk[row] }}</b><span>{{ t.risk.track_label }}</span></p>
+            <div class="tr-bar">
+              <i class="sg sg-plan"><b>{{ t.risk.stages.plan }}</b><small><span class="n n3">{{ t.risk.n3 }}</span><span class="n n9">{{ t.risk.n9 }}</span></small></i>
+              <i class="sg sg-build"><b>{{ t.risk.stages.build }}</b><small><span class="n n3">{{ t.risk.n3 }}</span><span class="n n9">{{ t.risk.n9 }}</span></small></i>
+              <i class="sg sg-test"><b>{{ t.risk.stages.test }}</b><small><span class="n n3">{{ t.risk.n3 }}</span><span class="n n9">{{ t.risk.n9 }}</span><span class="n n39">{{ t.risk.n39 }}</span></small></i>
+              {%- if row == "after" %}<div class="reclaimed"><span class="rc-label">{{ t.risk.reclaimed }}</span></div>{% endif %}
+            </div>
+            <div class="tr-review">
+              <span class="rv-dot"></span>
+              <span class="rv-label">{{ t.risk.review }}<small>{{ t.risk.users }}</small></span>
+              {%- if row == "after" %}<span class="rv-batch">{{ t.risk.batch }}</span>{% endif %}
+            </div>
+          </div>
+          {%- endfor %}
+        </div>
+        <figure class="board" aria-label="{{ t.risk.board.title }}">
+          <figcaption>{{ t.risk.board.title }}</figcaption>
+          <div class="wb">
+            <svg viewBox="0 0 520 430" aria-hidden="true">
+              <defs>
+                <filter id="wb-shadow" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="1" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.22"/></filter>
+              </defs>
+              <g class="mk mk-s1"><path pathLength="1" d="M80 98 L80 118 M70 108 L80 120 L90 108"/></g>
+              <g class="mk mk-s3"><path pathLength="1" d="M142 150 L196 150 M186 140 L198 150 L186 160"/></g>
+              <g class="mk mk-s3"><path pathLength="1" d="M322 160 C 350 170, 365 190, 378 212 M362 206 L380 216 L376 198"/></g>
+              <g class="mk mk-s4"><path pathLength="1" d="M438 294 C 420 320, 360 344, 326 356 M340 344 L322 358 L342 364"/></g>
+              <g class="mk mk-s4"><path pathLength="1" d="M198 362 L146 362 M156 352 L144 362 L156 372"/></g>
+              <g class="mk mk-s4"><path pathLength="1" d="M120 318 C 150 270, 180 230, 212 196 M196 200 L214 192 L206 212"/></g>
+              <text class="mk-text mk-s2" x="506" y="46" text-anchor="end">{{ t.risk.board.habit }}</text>
+              <path class="mk mk-line mk-s2" pathLength="1" d="M290 56 Q 400 62, 508 54"/>
+              <g class="mk-r mk-s4"><circle cx="270" cy="262" r="24"/><text x="270" y="271" text-anchor="middle">{{ t.risk.board.loop }}</text><text class="mk-small" x="270" y="304" text-anchor="middle">{{ t.risk.board.loop_note }}</text></g>
+              <text class="mk-verdict mk-s5" x="508" y="412" text-anchor="end">{{ t.risk.board.verdict }}</text>
+              {%- assign pos = "20,20,-2|20,116,2|200,116,-1|380,214,2|200,322,1|20,322,-2" | split: "|" -%}
+              {%- for n in t.risk.board.notes %}
+              {%- assign xy = pos[forloop.index0] | split: "," -%}
+              {%- assign stepmap = "1,1,3,3,4,4" | split: "," -%}
+              <g class="pi pi-s{{ stepmap[forloop.index0] }}" style="--x:{{ xy[0] }}px;--y:{{ xy[1] }}px;--r:{{ xy[2] }}deg">
+                <rect width="122" height="82" rx="2" filter="url(#wb-shadow)"/>
+                <foreignObject width="122" height="82"><div xmlns="http://www.w3.org/1999/xhtml" class="pi-text">{{ n }}</div></foreignObject>
+              </g>
+              {%- endfor %}
+            </svg>
+            <span class="wb-tray"><i class="pen"></i><i class="eraser"></i></span>
+          </div>
+        </figure>
+      </div>
+      <p class="demo-note">{{ t.risk.note }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="length paper" id="length">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="kicker">{{ t.length.kicker }}</p>
+      <h2>{{ t.length.title }}</h2>
+      <p class="sec-intro">{{ t.length.intro }}</p>
+    </header>
+    <div class="len reveal" id="len">
+      {%- assign kinds = "short,full" | split: "," -%}
+      {%- for k in kinds %}
+      <div class="ln ln-{{ k }}">
+        <p class="ln-head"><b>{{ t.length[k] }}</b><span class="ln-count"><span data-count="{{ k }}">0</span> {{ t.length.counter | downcase }}</span></p>
+        <div class="ln-box">
+          <div class="rounds">
+            {%- for r in (1..5) %}
+            <div class="rd" style="--i:{{ forloop.index0 }}">
+              <i class="rd-build">{{ t.length.build }}</i><i class="rd-users">{{ t.length.users }}</i><i class="rd-learn">{{ t.length.learn }}</i>
+            </div>
+            {%- endfor %}
+          </div>
+          <div class="ln-wall"><span>{{ t.length.review }}</span></div>
+        </div>
+        <div class="ln-result">
+          <p class="ln-outcome"><span class="hit">{{ t.length.outcome_hit }}</span><span class="miss">{{ t.length.outcome_miss }}</span></p>
+          {%- assign tk = "talk_" | append: k -%}{%- assign pk = "po_" | append: k -%}
+          <p class="ln-talk">{{ t.length[tk] }}</p>
+          <p class="ln-po">{{ t.length[pk] }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+    <ul class="legend legend-ink">
+      <li><i class="sw sw-build"></i>{{ t.length.build }}</li>
+      <li><i class="sw sw-users"></i>{{ t.length.users }}</li>
+      <li><i class="sw sw-learn"></i>{{ t.length.learn }}</li>
+    </ul>
+    <p class="demo-note demo-note-ink">{{ t.length.note }}</p>
+    <div class="len-cols">
+      {%- for c in t.length.columns %}
+      <article class="len-col reveal">
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.body }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+    <aside class="add-guide len-guide reveal" aria-label="{{ t.additions.guide_label }}">
+      <p class="guide-label">{{ t.additions.guide_label }}</p>
+      {% include quote.html key="fixed_length" t=t %}
+      {% include quote.html key="shorter" t=t %}
+      {% include quote.html key="review_working" t=t %}
+      <p class="fit"><b>{{ t.additions.fit_label }}.</b> {{ t.length.fit }}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="additions paper" id="additions">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="kicker">{{ t.additions.kicker }}</p>
+      <h2>{{ t.additions.title }}</h2>
+      <p class="sec-intro">{{ t.additions.intro }}</p>
+    </header>
+    <ol class="adds">
+      {%- for item in t.additions.items %}
+      <li class="add reveal" id="addition-{{ forloop.index }}">
+        <div class="add-main">
+          <span class="add-num" aria-hidden="true">{{ forloop.index }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.body }}</p>
+          {%- if item.example %}
+          <dl class="example">
+            <dt class="example-label">{{ item.example.label }}</dt>
+            {%- for row in item.example.rows %}
+            <div{% if row.strike %} class="off"{% endif %}><dt>{{ row.k }}</dt><dd>{{ row.v }}</dd></div>
+            {%- endfor %}
+          </dl>
+          {%- endif %}
+        </div>
+        <aside class="add-guide" aria-label="{{ t.additions.guide_label }}">
+          <p class="guide-label">{{ t.additions.guide_label }}</p>
+          {%- for key in item.quotes %}
+          {% include quote.html key=key t=t %}
+          {%- endfor %}
+          <p class="fit"><b>{{ t.additions.fit_label }}.</b> {{ item.fit }}</p>
+        </aside>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="proof dark" id="proof">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="kicker">{{ t.proof.kicker }}</p>
+      <h2>{{ t.proof.title }}</h2>
+      <p class="sec-intro">{{ t.proof.intro }}</p>
+    </header>
+    <div class="proof-grid">
+      <div class="proof-quotes reveal">
+        {% include quote.html key="immutable" t=t big=true %}
+        {% include quote.html key="incomplete" t=t %}
+      </div>
+      <div class="proof-table reveal">
+        <table>
+          <caption>{{ t.proof.table_title }}</caption>
+          <tbody>
+            {%- for row in t.proof.rows %}
+            <tr><th scope="row">{{ row.k }}<small>{{ row.d }}</small></th><td><span class="pill">{{ t.proof.unchanged }}</span></td></tr>
+            {%- endfor %}
+            <tr class="added"><th scope="row">{{ t.proof.added_k }}<small>{{ t.proof.added_d }}</small></th><td><span class="pill pill-add">{{ t.proof.added_v }}</span></td></tr>
+          </tbody>
+        </table>
+        <p class="source">{{ t.proof.source }}</p>
+        <p><a class="btn btn-line" href="{{ site.data.guide.url }}" rel="noopener">{{ t.proof.read_guide }} ↗</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-teaser paper" id="blog">
+  <div class="wrap">
+    <header class="sec-head sec-head-row reveal">
+      <div>
+        <p class="kicker">{{ t.blog.kicker }}</p>
+        <h2>{{ t.blog.title }}</h2>
+      </div>
+      <a class="btn btn-ink" href="{{ t.blog_url | relative_url }}">{{ t.blog.all }} →</a>
+    </header>
+    {% include post-list.html lang=page.lang t=t limit=3 %}
+  </div>
+</section>
