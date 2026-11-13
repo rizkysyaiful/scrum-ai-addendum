@@ -55,6 +55,8 @@ img, svg { max-width: 100%; }
     var(--pitch);
 }
 .paper { background: var(--paper); color: var(--ink); }
+.additions.paper { background: #e4eadb; }
+.additions .add { border-top-color: var(--green); }
 section { padding-block: var(--sec); }
 
 /* ---------- type ---------- */
