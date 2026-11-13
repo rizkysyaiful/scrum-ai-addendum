@@ -293,11 +293,11 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 }
 
 /* ---------- bridge label between two sections ---------- */
-.risk { position: relative; }
+.risk, .additions { position: relative; }
 .bridge { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); z-index: 2; width: max-content; max-width: calc(100% - 2 * var(--gutter)); }
 .bridge span { display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; border-radius: 999px; background: var(--ball); color: var(--pitch-deep); font-family: var(--display); font-stretch: 78%; font-weight: 800; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.15; text-align: center; box-shadow: 0 10px 26px -12px rgba(8, 36, 25, 0.7); }
 .bridge span::after { content: "↓"; font-family: var(--body); font-weight: 700; }
-@media (max-width: 760px) { .bridge { position: static; transform: none; margin: 0 auto 22px; } .risk { padding-top: 28px; } }
+@media (max-width: 760px) { .bridge { position: static; transform: none; margin: 0 auto 22px; } .risk, .additions { padding-top: 28px; } }
 
 /* ---------- the risk demo ---------- */
 .demo { border: 1.5px solid var(--chalk-line); border-radius: 20px; padding: clamp(12px, 2vh, 24px) clamp(16px, 2.4vw, 32px); background: rgba(8, 36, 25, 0.55); }
@@ -421,7 +421,16 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .ln-full.done .ln-po, .ln-full.done .ln-talk { color: var(--ink); }
 .sub + .sub { margin-top: clamp(40px, 7vh, 72px); }
 .len-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
-.len-col { padding: 18px 28px 0 0; }
+.len-col { padding: 18px 28px 0 0; display: flex; flex-direction: column; }
+.len-col p:not(.col-cue) { flex: 1; }
+.col-cue { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; margin-top: 14px; padding: 6px 16px 6px 7px; border-radius: 999px; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; }
+.col-cue i { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; font-style: normal; font-size: 0.9rem; color: #fff; }
+.len-col .cue-bad { background: rgba(240, 112, 90, 0.16); color: #a8321f; }
+.cue-bad i { background: #c9432b; }
+.len-col .cue-good { background: rgba(27, 106, 75, 0.16); color: var(--green); }
+.cue-good i { background: var(--green); }
+.len-col:has(.cue-bad) h3 { color: #8f2a19; }
+.len-col:has(.cue-good) h3 { color: var(--green); }
 .len-col + .len-col { padding-left: 28px; border-left: 1px dashed var(--rule); }
 .len-col h3 { font-size: 1.35rem; margin-bottom: 8px; }
 .len-col p { font-size: 0.93rem; line-height: 1.5; color: var(--ink-dim); }

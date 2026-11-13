@@ -255,6 +255,7 @@ layout: default
       <article class="len-col reveal">
         <h3>{{ c.title }}</h3>
         <p>{{ c.body }}</p>
+        <p class="col-cue cue-{{ c.verdict }}"><i aria-hidden="true">{% if c.verdict == "good" %}✓{% else %}✕{% endif %}</i>{% if c.verdict == "good" %}{{ t.length.cue_good }}{% else %}{{ t.length.cue_bad }}{% endif %}</p>
       </article>
       {%- endfor %}
     </div>
@@ -270,6 +271,7 @@ layout: default
 </section>
 
 <section class="additions paper" id="additions">
+  <p class="bridge"><span>{{ t.additions.bridge }}</span></p>
   <div class="wrap">
     <header class="sec-head reveal">
       <p class="kicker">{{ t.additions.kicker }}</p>

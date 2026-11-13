@@ -161,13 +161,18 @@ length:
   po_short: "Product Owner yang sebenarnya tidak punya alasan untuk hadir."
   po_full: "Product Owner yang sebenarnya punya segala alasan untuk hadir."
   counter: "Putaran bersama pengguna"
+  cue_bad: "Buruk"
+  cue_good: "Baik"
   columns:
     - title: "Scrum pra-AI"
       body: "Membangun menghabiskan seluruh Sprint, sehingga Sprint Review lebih banyak membahas timeline dan output. Product Owner yang sebenarnya tidak punya insentif untuk hadir, dan lahirlah proxy atau scribe Product Owner."
-    - title: "AI + Sprint penuh"
-      body: "Beberapa putaran bersama pengguna muat dalam satu Sprint, sehingga business outcome benar-benar bisa dicapai dan Review menjadi percakapan tentang profit, rugi, dan keterlibatan. Percakapan seperti itulah yang ingin diikuti Product Owner yang sebenarnya."
+      verdict: bad
     - title: "AI + Sprint yang dipendekkan"
       body: "Putaran bersama pengguna makin sedikit, outcome terpotong, dan Review kembali membahas timeline. Keuntungan kecepatan habis untuk lebih banyak rapat, bukan lebih banyak validasi."
+      verdict: bad
+    - title: "AI + Sprint penuh"
+      body: "Beberapa putaran bersama pengguna muat dalam satu Sprint, sehingga business outcome benar-benar bisa dicapai dan Review menjadi percakapan tentang profit, rugi, dan keterlibatan. Percakapan seperti itulah yang ingin diikuti Product Owner yang sebenarnya."
+      verdict: good
   fit: >-
     Scrum Guide menetapkan batas atas satu bulan dan menyerahkan panjangnya
     kepada tim. Adendum ini memakai ruang itu: jaga Sprint cukup panjang
@@ -176,6 +181,7 @@ length:
   note: "Ilustrasi mekanismenya, bukan data hasil pengukuran."
 
 additions:
+  bridge: "Jadi, apa yang perlu kita tambahkan ke Scrum agar ini berhasil?"
   kicker: "Adendumnya"
   title: "Empat tambahan. Tidak ada yang dibuang."
   intro: >-

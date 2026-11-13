@@ -159,13 +159,18 @@ length:
   po_short: "The real Product Owner has no reason to attend."
   po_full: "The real Product Owner has every reason to attend."
   counter: "Rounds with users"
+  cue_bad: "Bad"
+  cue_good: "Good"
   columns:
     - title: "Pre-AI Scrum"
       body: "Building took the whole Sprint, so the Sprint Review was mostly about timeline and output. The real Product Owner had little incentive to attend, and the proxy or scribe Product Owner was born."
-    - title: "AI + full Sprint"
-      body: "Several rounds with users fit in one Sprint, so the business outcome can actually be reached and the Review becomes a conversation about profit, loss and engagement. That is a conversation the real Product Owner wants to be in."
+      verdict: bad
     - title: "AI + shortened Sprint"
       body: "Fewer rounds with users fit, the outcome is cut short, and the Review slides back to timeline talk. The speed gain is spent on more meetings instead of more validation."
+      verdict: bad
+    - title: "AI + full Sprint"
+      body: "Several rounds with users fit in one Sprint, so the business outcome can actually be reached and the Review becomes a conversation about profit, loss and engagement. That is a conversation the real Product Owner wants to be in."
+      verdict: good
   fit: >-
     The Scrum Guide sets a ceiling of one month and leaves the length to the
     team. The addendum uses that room: keep the Sprint long enough for
@@ -174,6 +179,7 @@ length:
   note: "An illustration of the mechanism, not measured data."
 
 additions:
+  bridge: "So, what should we add to Scrum to make this work?"
   kicker: "The addendum"
   title: "Four additions. Nothing removed."
   intro: >-
