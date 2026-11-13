@@ -39,7 +39,7 @@ hero:
 core:
   kicker: "The core idea"
   title: "Which one is closer to The Scrum Guide?"
-  intro_lead: "If this is what the latest Scrum Guide (2020) says about the Sprint:"
+  intro_lead: "This is what the latest Scrum Guide (2020) says about the Sprint:"
   past: "Past"
   future: "Future"
   one_sprint: "1 Sprint"
