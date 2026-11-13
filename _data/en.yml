@@ -38,10 +38,8 @@ hero:
 
 core:
   kicker: "The core idea"
-  title: "The Sprint stays. What gets reviewed changes."
-  intro: >-
-    Both are one Sprint that ends in one Sprint Review. What fills the Sprint
-    decides what the Review can check.
+  title: "Which one is closer to The Scrum Guide?"
+  intro_lead: "If this is what the latest Scrum Guide (2020) says about the Sprint:"
   past: "Past"
   future: "Future"
   one_sprint: "1 Sprint"

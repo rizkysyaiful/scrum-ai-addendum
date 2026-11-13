@@ -167,6 +167,8 @@ h1 { display: grid; gap: 18px; }
 .core-head .kicker { margin-bottom: 12px; }
 .core-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); max-width: none; }
 .core-head .sec-intro { margin-top: 10px; max-width: none; font-size: 1.05rem; }
+.core-quote { quotes: "\201C" "\201D"; font-family: var(--serif); font-style: italic; font-size: 1.18em; color: var(--ink); }
+.core-gloss { font-size: 0.88em; }
 
 .timeline { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 36px); align-items: center; height: 34px; margin-bottom: 14px; }
 .timeline::before { content: ""; position: absolute; left: 0; right: 12px; top: 50%; border-top: 3px solid var(--ink); transform-origin: left; transition: transform 1.1s cubic-bezier(0.6, 0, 0.2, 1) 0.15s; }

@@ -39,10 +39,8 @@ hero:
 
 core:
   kicker: "Ide inti"
-  title: "Sprint-nya tetap. Yang di-review berubah."
-  intro: >-
-    Keduanya satu Sprint yang diakhiri satu Sprint Review. Isi Sprint-nya
-    menentukan apa yang bisa diperiksa di Review.
+  title: "Mana yang lebih dekat dengan Scrum Guide?"
+  intro_lead: "Jika ini yang dikatakan Scrum Guide terbaru (2020) tentang Sprint:"
   past: "Masa lalu"
   future: "Masa depan"
   one_sprint: "1 Sprint"
@@ -64,7 +62,7 @@ core:
     label: "Sprint dengan panjang yang sama digambarkan sebagai siklus. Membangun hanya sebentar; tiga putaran bangun, pengguna, dan validasi mengisi Sprint, dan Sprint Review memeriksa apakah business outcome tercapai."
     metric: "Pelanggan yang mengajak teman"
     result: "Business outcome tercapai ✓"
-    question: "“Apa business outcome-nya? Apa yang kita pelajari dari situ?”"
+    question: "“Apa business outcome-\u2060nya? Apa yang kita pelajari dari situ?”"
     body: "Membangun hanya butuh sebagian kecil Sprint. Sisanya untuk putaran bersama pengguna, jadi Review memeriksa business outcome: profit, rugi, keterlibatan pengguna."
   legend:
     plan: "rencana"
@@ -258,6 +256,7 @@ additions:
 
 # Free Indonesian renderings of the quoted passages, shown under the original.
 gloss:
+  heartbeat: "Sprint adalah jantung Scrum, tempat ide diubah menjadi nilai."
   planning_why: "Seluruh Scrum Team kemudian berkolaborasi menetapkan Sprint Goal yang menyampaikan mengapa Sprint tersebut bernilai bagi stakeholder."
   goal_single: "Sprint Goal adalah satu-satunya tujuan Sprint. Walaupun Sprint Goal merupakan komitmen Developers, ia memberi keleluasaan mengenai pekerjaan apa persisnya yang dibutuhkan untuk mencapainya."
   shorter: "Sprint yang lebih pendek dapat dipakai untuk menghasilkan lebih banyak siklus belajar dan membatasi risiko biaya serta usaha pada rentang waktu yang lebih kecil."

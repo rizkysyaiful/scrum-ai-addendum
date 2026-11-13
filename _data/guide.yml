@@ -4,6 +4,10 @@
 url: "https://scrumguides.org/scrum-guide.html"
 license_url: "https://creativecommons.org/licenses/by-sa/4.0/"
 quotes:
+  heartbeat:
+    section: "The Sprint"
+    anchor: "the-sprint"
+    text: "Sprints are the heartbeat of Scrum, where ideas are turned into value."
   planning_why:
     section: "Sprint Planning"
     anchor: "topic-one-why-is-this-sprint-valuable"

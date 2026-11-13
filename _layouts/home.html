@@ -34,7 +34,11 @@ layout: default
     <header class="sec-head core-head reveal">
       <p class="kicker">{{ t.core.kicker }}</p>
       <h2>{{ t.core.title }}</h2>
-      <p class="sec-intro">{{ t.core.intro }}</p>
+      {%- assign hb = site.data.guide.quotes.heartbeat %}
+      <p class="sec-intro core-intro">{{ t.core.intro_lead }}
+        <q class="core-quote" lang="en" cite="{{ site.data.guide.url }}#{{ hb.anchor }}">{{ hb.text }}</q>
+        {%- if t.gloss.heartbeat %} <span class="core-gloss">({{ t.additions.gloss_label }}: {{ t.gloss.heartbeat }})</span>{% endif %}
+      </p>
     </header>
     <div class="timeline reveal" aria-hidden="true">
       <span class="tl-label tl-past">{{ t.core.past }}</span>
