@@ -5,6 +5,7 @@ created_by: "Created by"
 skip: "Skip to content"
 
 nav:
+  menu: "Menu"
   core: "The core idea"
   shift: "The shift"
   risk: "The risk"

@@ -104,6 +104,18 @@
     }
   }
 
+  /* ---- header menu on narrow screens ---- */
+  const menuBtn = document.querySelector(".menu-btn");
+  const siteNav = document.getElementById("site-nav");
+  if (menuBtn && siteNav) {
+    const setOpen = (open) => { siteNav.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", open); };
+    menuBtn.addEventListener("click", () => setOpen(!siteNav.classList.contains("open")));
+    siteNav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { setOpen(false); menuBtn.focus(); } });
+    document.addEventListener("click", (e) => { if (!e.target.closest(".site-header")) setOpen(false); });
+    matchMedia("(min-width: 1061px)").addEventListener("change", (m) => { if (m.matches) setOpen(false); });
+  }
+
   /* ---- blog: writer tabs on phones (both columns show on desktop) ---- */
   const writers = document.getElementById("writers");
   if (writers) {

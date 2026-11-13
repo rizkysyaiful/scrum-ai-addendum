@@ -43,7 +43,7 @@
         <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><ellipse cx="16" cy="16" rx="13" ry="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="26" r="4" class="brand-ball"/></svg>
         <span>Scrum: <b>AI Addendum</b></span>
       </a>
-      <nav class="nav" aria-label="Main">
+      <nav class="nav" id="site-nav" aria-label="Main">
         <a class="nav-sec" href="{{ home_url }}#core">{{ t.nav.core }}</a>
         <a class="nav-sec" href="{{ home_url }}#shift">{{ t.nav.shift }}</a>
         <a class="nav-sec" href="{{ home_url }}#risk">{{ t.nav.risk }}</a>
@@ -60,6 +60,7 @@
           <a href="{{ href }}" hreflang="{{ l }}" lang="{{ l }}" title="{{ site.data[l].lang_name }}"{% if l == lang %} aria-current="true"{% endif %}>{{ l | upcase }}</a>
         {%- endfor -%}
       </div>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{{ t.nav.menu }}"><span></span><span></span><span></span></button>
     </div>
   </header>
 

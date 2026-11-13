@@ -5,6 +5,7 @@ created_by: "Digagas oleh"
 skip: "Langsung ke konten"
 
 nav:
+  menu: "Menu"
   core: "Ide inti"
   shift: "Pergeseran"
   risk: "Risiko"
