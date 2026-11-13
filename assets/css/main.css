@@ -422,7 +422,7 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 
 /* ---------- the additions ---------- */
 .adds { display: grid; gap: 0; }
-.add { display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); gap: clamp(24px, 4vw, 56px); padding-block: clamp(18px, 3vh, 34px); border-top: 2px solid var(--ink); align-items: start; }
+.add { display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); gap: clamp(24px, 4vw, 56px); padding-block: clamp(24px, 4vh, 44px) clamp(40px, 7vh, 72px); border-top: 2px solid var(--ink); align-items: start; }
 .add-main { position: relative; padding-left: clamp(0px, 6vw, 84px); }
 .add-num {
   position: absolute; left: 0; top: -0.08em; font-family: var(--display); font-stretch: 62%; font-weight: 800;
@@ -529,7 +529,7 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
   .gq-gloss { font-size: 0.78rem; }
   .fit { margin-top: 10px; padding-top: 8px; font-size: 0.88rem; }
   .add-guide { padding-block: 12px; }
-  .add { padding-block: 12px; }
+  .add { padding-block: 20px 40px; }
   .proof .gq-big blockquote { font-size: 1.3rem; }
   .gq + .gq { margin-top: 8px; padding-top: 8px; }
   .sec-head { margin-bottom: 14px; }
