@@ -41,9 +41,12 @@ core:
   kicker: "Ide inti"
   title: "Sprint-nya tetap. Yang di-review berubah."
   intro: >-
-    Keduanya sama-sama satu Sprint yang diakhiri satu Sprint Review. Bedanya
-    ada pada apa yang mengisi Sprint, dan karena itu, apa yang bisa diperiksa
-    di Review.
+    Keduanya satu Sprint yang diakhiri satu Sprint Review. Isi Sprint-nya
+    menentukan apa yang bisa diperiksa di Review.
+  past: "Masa lalu"
+  future: "Masa depan"
+  one_sprint: "1 Sprint"
+  same_length: "panjang sama"
   top: "Sprint Review"
   reviewed: "Yang di-review"
   asks: "Sprint Review bertanya"
@@ -61,7 +64,7 @@ core:
     label: "Sprint dengan panjang yang sama digambarkan sebagai siklus. Membangun hanya sebentar; tiga putaran bangun, pengguna, dan validasi mengisi Sprint, dan Sprint Review memeriksa apakah business outcome tercapai."
     metric: "Pelanggan yang mengajak teman"
     result: "Business outcome tercapai ✓"
-    question: "“Business outcome-nya tercapai?”"
+    question: "“Apa business outcome-nya? Apa yang kita pelajari dari situ?”"
     body: "Membangun hanya butuh sebagian kecil Sprint. Sisanya untuk putaran bersama pengguna, jadi Review memeriksa business outcome: profit, rugi, keterlibatan pengguna."
   legend:
     plan: "rencana"

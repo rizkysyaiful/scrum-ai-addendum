@@ -40,8 +40,12 @@ core:
   kicker: "The core idea"
   title: "The Sprint stays. What gets reviewed changes."
   intro: >-
-    Both are one Sprint that ends in one Sprint Review. What differs is what
-    fills the Sprint, and so what the Review is able to check.
+    Both are one Sprint that ends in one Sprint Review. What fills the Sprint
+    decides what the Review can check.
+  past: "Past"
+  future: "Future"
+  one_sprint: "1 Sprint"
+  same_length: "same length"
   top: "Sprint Review"
   reviewed: "What gets reviewed"
   asks: "The Sprint Review asks"
@@ -59,7 +63,7 @@ core:
     label: "A Sprint of the same length drawn as a cycle. Building is short; three rounds of building, users and validation fill the Sprint, and the Sprint Review checks whether the business outcome was reached."
     metric: "Customers who invited a friend"
     result: "Business outcome reached ✓"
-    question: "“Did we reach the business outcome?”"
+    question: "“What is the business outcome? What do we learn from that?”"
     body: "Building takes a fraction of the Sprint. The rest goes to rounds with users, so the Review checks the business outcome: profit, loss, user engagement."
   legend:
     plan: "plan"
