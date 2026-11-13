@@ -26,15 +26,15 @@ hero:
   cta_primary: "Lihat empat tambahannya"
   cta_secondary: "Cocokkan dengan Scrum Guide"
   loop:
-    label: "Diagram siklus belajar: business outcome berikutnya, bangun, dipakai pengguna, validasi business outcome. Dengan AI, tahap membangun lewat dengan cepat, sehingga waktu tim tercurah untuk pengguna."
-    idea: "Berikutnya"
-    build: "Bangun"
-    use: "Dipakai pengguna"
-    learn: "Validasi"
-    idea_note: "business outcome"
-    learn_note: "business outcome"
-    build_note: "kini sebagian besar oleh AI"
-    use_note: "waktu Anda tercurah di sini"
+    label: "Diagram siklus belajar: rencanakan business outcome berikutnya, dev pertama, dipakai pengguna dan dev ulang, review business outcome. Dengan AI, dev pertama lewat dengan cepat, sehingga sebagian besar waktu tim tercurah untuk pengguna."
+    idea: "Rencana"
+    build: "Dev Pertama"
+    use: "Dipakai pengguna + dev ulang"
+    learn: "Review"
+    idea_note: "Business Outcome berikutnya"
+    learn_note: "Business<br>Outcome"
+    build_note: "mayoritas oleh AI"
+    use_note: "waktu banyak habis di sini"
     center: "siklus belajar"
 
 core:
@@ -97,10 +97,7 @@ shift:
 risk:
   kicker: "Risiko"
   title: "Kecepatan AI tanpa pengguna hanyalah Waterfall yang lebih cepat."
-  intro: >-
-    Membangun jadi cepat. Jika kebiasaan bertemu pengguna tidak berubah,
-    tetap sekali per Sprint Review, waktu yang terbebas tidak akan tetap
-    kosong. Lihat apa yang mengisinya.
+  intro: "Membangun jadi cepat. Lihat apa yang mengisi waktu yang terbebas."
   prev: "Langkah sebelumnya"
   next: "Langkah berikutnya"
   track_label: "Satu Sprint"
@@ -210,9 +207,9 @@ additions:
       fit: >-
         Outcome serep bukan Sprint Goal kedua. Sprint tetap punya satu tujuan
         tunggal; serep adalah outcome paling bernilai berikutnya, disepakati
-        sejak awal supaya tim tidak hanyut ke pekerjaan tak terencana ketika
-        selesai lebih cepat. Selesai lebih awal bukan alasan memperpendek
-        Sprint; itu ruang untuk satu putaran lagi bersama pengguna.
+        sejak awal agar tim tidak hanyut ke pekerjaan tak terencana. Selesai
+        lebih awal bukan alasan memperpendek Sprint; itu ruang untuk satu
+        putaran lagi bersama pengguna.
     - title: "Proxy atau scribe Product Owner belajar menjadi Developer."
       body: >-
         Jika di tim Anda ada orang yang tugasnya meneruskan keinginan pengambil
@@ -279,9 +276,9 @@ proof:
   kicker: "Pengecekan"
   title: "Masihkah ini Scrum? Ya, seutuhnya."
   intro: >-
-    Scrum Guide tegas dalam satu hal: Anda tidak bisa membuang atau mengubah
-    bagiannya lalu tetap menyebut hasilnya Scrum. Sama jelasnya, Scrum memang
-    dirancang untuk mewadahi praktik lain di dalamnya.
+    Scrum Guide tegas dalam satu hal: bagiannya tidak boleh dibuang atau
+    diubah jika hasilnya tetap disebut Scrum. Sama jelasnya, Scrum dirancang
+    untuk mewadahi praktik lain di dalamnya.
   table_title: "Apa yang diubah adendum ini"
   unchanged: "Tidak berubah"
   rows:
@@ -295,11 +292,9 @@ proof:
   added_d: "Empat tambahan di atas"
   added_v: "Empat ditambahkan"
   source: >-
-    Semua kutipan diambil kata demi kata dari Scrum Guide, November 2020,
-    karya Ken Schwaber dan Jeff Sutherland, versi terbaru saat halaman ini
-    ditulis, digunakan di bawah lisensi Creative Commons Attribution
-    Share-Alike 4.0. Adendum ini adalah usulan independen. Tidak berafiliasi
-    dengan dan tidak didukung secara resmi oleh para penulis Scrum Guide.
+    Kutipan diambil kata demi kata dari Scrum Guide, November 2020, karya Ken
+    Schwaber dan Jeff Sutherland, berlisensi CC BY-SA 4.0. Adendum ini usulan
+    independen, tidak didukung oleh para penulis Scrum Guide.
   read_guide: "Baca Scrum Guide selengkapnya"
 
 blog:

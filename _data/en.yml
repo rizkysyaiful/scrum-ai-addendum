@@ -25,13 +25,13 @@ hero:
   cta_primary: "See the four additions"
   cta_secondary: "Check it against the Scrum Guide"
   loop:
-    label: "Diagram of the learning loop: next business outcome, build, in users’ hands, validate business outcome. With AI the build step passes quickly, so the time goes to users."
-    idea: "Next"
-    build: "Build"
-    use: "In users’ hands"
-    learn: "Validate"
-    idea_note: "business outcome"
-    learn_note: "business outcome"
+    label: "Diagram of the learning loop: plan the next business outcome, initial build, in users’ hands plus re-build, review the business outcome. With AI the initial build passes quickly, so most of the time goes to users."
+    idea: "Plan"
+    build: "Initial Build"
+    use: "In users’ hands + re-build"
+    learn: "Review"
+    idea_note: "Next Business Outcome"
+    learn_note: "Business<br>Outcome"
     build_note: "mostly AI now"
     use_note: "your time goes here"
     center: "the learning loop"
@@ -96,10 +96,7 @@ shift:
 risk:
   kicker: "The risk"
   title: "AI speed without users is Waterfall, only faster."
-  intro: >-
-    Building gets fast. If the habit of meeting users stays the same, once
-    per Sprint Review, the freed-up time does not stay free. Watch what fills
-    it.
+  intro: "Building gets fast. Watch what fills the time that frees up."
   prev: "Previous step"
   next: "Next step"
   track_label: "One Sprint"
@@ -207,9 +204,9 @@ additions:
       fit: >-
         The spare outcome is not a second Sprint Goal. The Sprint keeps its
         single objective; the spare is the next most valuable outcome, agreed
-        in advance so the team doesn’t drift into unplanned work when it
-        finishes early. Finishing early is not a reason to shorten the
-        Sprint; it is room for another round with users.
+        in advance so the team doesn’t drift into unplanned work. Finishing
+        early is not a reason to shorten the Sprint; it is room for another
+        round with users.
     - title: "A proxy or scribe Product Owner learns to develop."
       body: >-
         If your team has someone who relays the real decision-maker’s wishes,
@@ -271,11 +268,9 @@ proof:
   added_d: "The four additions above"
   added_v: "Four added"
   source: >-
-    All quotations are word for word from the Scrum Guide, November 2020, by
-    Ken Schwaber and Jeff Sutherland, the current version at the time of
-    writing, used under the Creative Commons Attribution Share-Alike 4.0
-    license. This addendum is an independent proposal. It is not affiliated
-    with or endorsed by the authors of the Scrum Guide.
+    Quotations are word for word from the Scrum Guide, November 2020, by Ken
+    Schwaber and Jeff Sutherland, under CC BY-SA 4.0. This addendum is an
+    independent proposal, not endorsed by the authors of the Scrum Guide.
   read_guide: "Read the full Scrum Guide"
 
 blog:

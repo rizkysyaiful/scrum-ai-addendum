@@ -149,7 +149,7 @@ layout: default
           <li class="cap{% if forloop.last %} cap-verdict{% endif %}" data-cap="{{ forloop.index0 }}">{{ c }}</li>
           {%- endfor %}
         </ol>
-          <p class="step-count"><span data-step-n>1</span> / {{ t.risk.steps.size }}</p>
+          <div class="step-meta"><p class="step-count"><span data-step-n>1</span> / {{ t.risk.steps.size }}</p><p class="demo-note">{{ t.risk.note }}</p></div>
         </div>
         <button type="button" class="step-btn" data-dir="1" aria-label="{{ t.risk.next }}">›</button>
       </div>
@@ -204,13 +204,13 @@ layout: default
           </div>
         </figure>
       </div>
-      <p class="demo-note">{{ t.risk.note }}</p>
     </div>
   </div>
 </section>
 
 <section class="length paper" id="length">
   <div class="wrap">
+    <div class="sub">
     <header class="sec-head reveal">
       <p class="kicker">{{ t.length.kicker }}</p>
       <h2>{{ t.length.title }}</h2>
@@ -246,6 +246,8 @@ layout: default
       <li><i class="sw sw-learn"></i>{{ t.length.learn }}</li>
     </ul>
     <p class="demo-note demo-note-ink">{{ t.length.note }}</p>
+    </div>
+    <div class="sub sub-b">
     <div class="len-cols">
       {%- for c in t.length.columns %}
       <article class="len-col reveal">
@@ -261,6 +263,7 @@ layout: default
       {% include quote.html key="review_working" t=t %}
       <p class="fit"><b>{{ t.additions.fit_label }}.</b> {{ t.length.fit }}</p>
     </aside>
+    </div>
   </div>
 </section>
 
@@ -317,9 +320,9 @@ layout: default
           <caption>{{ t.proof.table_title }}</caption>
           <tbody>
             {%- for row in t.proof.rows %}
-            <tr><th scope="row">{{ row.k }}<small>{{ row.d }}</small></th><td><span class="pill">{{ t.proof.unchanged }}</span></td></tr>
+            <tr><th scope="row"><span class="pr-k">{{ row.k }}</span><span class="pill">{{ t.proof.unchanged }}</span><small>{{ row.d }}</small></th></tr>
             {%- endfor %}
-            <tr class="added"><th scope="row">{{ t.proof.added_k }}<small>{{ t.proof.added_d }}</small></th><td><span class="pill pill-add">{{ t.proof.added_v }}</span></td></tr>
+            <tr class="added"><th scope="row"><span class="pr-k">{{ t.proof.added_k }}</span><span class="pill pill-add">{{ t.proof.added_v }}</span><small>{{ t.proof.added_d }}</small></th></tr>
           </tbody>
         </table>
         <p class="source">{{ t.proof.source }}</p>
