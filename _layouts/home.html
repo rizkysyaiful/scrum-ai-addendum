@@ -14,7 +14,7 @@ layout: default
       <svg viewBox="0 0 500 400" aria-hidden="true">
         <ellipse class="loop-inner" cx="250" cy="200" rx="118" ry="82"/>
         <path class="loop-track" id="loop-path" pathLength="100" d="M250 40 A215 160 0 1 1 249.9 40"/>
-        <path class="loop-hot" pathLength="100" d="M250 40 A215 160 0 1 1 249.9 40"/>
+        <g class="loop-band" id="loop-band"><path/><circle r="0"/><circle r="0"/></g>
         <g class="loop-stations">
           <circle cx="250" cy="40" r="9"/><circle cx="465" cy="200" r="9"/><circle cx="250" cy="360" r="9"/><circle cx="35" cy="200" r="9"/>
         </g>
@@ -134,6 +134,7 @@ layout: default
 </section>
 
 <section class="risk dark" id="risk">
+  <p class="bridge"><span>{{ t.risk.bridge }}</span></p>
   <div class="wrap">
     <header class="sec-head reveal">
       <p class="kicker">{{ t.risk.kicker }}</p>
@@ -162,8 +163,8 @@ layout: default
             <div class="tr-bar">
               <i class="sg sg-plan"><b>{{ t.risk.stages.plan }}</b><small><span class="n n3">{{ t.risk.n3 }}</span><span class="n n9">{{ t.risk.n9 }}</span></small></i>
               <i class="sg sg-build"><b>{{ t.risk.stages.build }}</b><small><span class="n n3">{{ t.risk.n3 }}</span><span class="n n9">{{ t.risk.n9 }}</span></small></i>
-              <i class="sg sg-test"><b>{{ t.risk.stages.test }}</b><small><span class="n n3">{{ t.risk.n3 }}</span><span class="n n9">{{ t.risk.n9 }}</span><span class="n n39">{{ t.risk.n39 }}</span></small></i>
               {%- if row == "after" %}<div class="reclaimed"><span class="rc-label">{{ t.risk.reclaimed }}</span></div>{% endif %}
+              <i class="sg sg-test"><b>{{ t.risk.stages.test }}</b><small><span class="n n3">{{ t.risk.n3 }}</span><span class="n n9">{{ t.risk.n9 }}</span><span class="n n39">{{ t.risk.n39 }}</span></small></i>
             </div>
             <div class="tr-review">
               <span class="rv-dot"></span>
@@ -176,21 +177,22 @@ layout: default
         <figure class="board" aria-label="{{ t.risk.board.title }}">
           <figcaption>{{ t.risk.board.title }}</figcaption>
           <div class="wb">
-            <svg viewBox="0 0 520 430" aria-hidden="true">
+            <svg viewBox="0 0 520 452" aria-hidden="true">
               <defs>
                 <filter id="wb-shadow" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="1" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.22"/></filter>
               </defs>
-              <g class="mk mk-s1"><path pathLength="1" d="M80 98 L80 118 M70 108 L80 120 L90 108"/></g>
-              <g class="mk mk-s3"><path pathLength="1" d="M142 150 L196 150 M186 140 L198 150 L186 160"/></g>
-              <g class="mk mk-s3"><path pathLength="1" d="M322 160 C 350 170, 365 190, 378 212 M362 206 L380 216 L376 198"/></g>
-              <g class="mk mk-s4"><path pathLength="1" d="M438 294 C 420 320, 360 344, 326 356 M340 344 L322 358 L342 364"/></g>
-              <g class="mk mk-s4"><path pathLength="1" d="M198 362 L146 362 M156 352 L144 362 L156 372"/></g>
-              <g class="mk mk-s4"><path pathLength="1" d="M120 318 C 150 270, 180 230, 212 196 M196 200 L214 192 L206 212"/></g>
-              <text class="mk-text mk-s2" x="506" y="46" text-anchor="end">{{ t.risk.board.habit }}</text>
-              <path class="mk mk-line mk-s2" pathLength="1" d="M290 56 Q 400 62, 508 54"/>
-              <g class="mk-r mk-s4"><circle cx="270" cy="262" r="24"/><text x="270" y="271" text-anchor="middle">{{ t.risk.board.loop }}</text><text class="mk-small" x="270" y="304" text-anchor="middle">{{ t.risk.board.loop_note }}</text></g>
-              <text class="mk-verdict mk-s5" x="508" y="412" text-anchor="end">{{ t.risk.board.verdict }}</text>
-              {%- assign pos = "20,20,-2|20,116,2|200,116,-1|380,214,2|200,322,1|20,322,-2" | split: "|" -%}
+              <g class="mk mk-s1"><path pathLength="1" d="M80 108 L80 134 M69 123 L80 136 L91 123"/></g>
+              <g class="mk mk-s3"><path pathLength="1" d="M142 178 L196 170 M186 160 L198 169 L187 180"/></g>
+              <g class="mk mk-s3"><path pathLength="1" d="M322 176 C 350 186, 365 206, 378 228 M362 222 L380 232 L376 214"/></g>
+              <g class="mk mk-s4"><path pathLength="1" d="M438 310 C 420 338, 360 362, 326 374 M340 362 L322 376 L342 382"/></g>
+              <g class="mk mk-s4"><path pathLength="1" d="M198 378 L146 378 M156 368 L144 378 L156 388"/></g>
+              <g class="mk mk-s4"><path pathLength="1" d="M96 332 C 130 290, 170 240, 208 218 M192 222 L210 214 L204 234"/></g>
+              {%- assign hl = t.risk.board.habit | split: "|" %}
+              <text class="mk-text mk-s2" x="506" text-anchor="end"><tspan x="506" y="34">{{ hl[0] }}</tspan><tspan x="506" y="60">{{ hl[1] }}</tspan></text>
+              <path class="mk mk-line mk-s2" pathLength="1" d="M262 72 Q 390 80, 508 70"/>
+              <g class="mk-r mk-s4"><circle cx="262" cy="288" r="24"/><text x="262" y="297" text-anchor="middle">{{ t.risk.board.loop }}</text><text class="mk-small" x="262" y="330" text-anchor="middle">{{ t.risk.board.loop_note }}</text></g>
+              <text class="mk-verdict mk-s5" x="508" y="440" text-anchor="end">{{ t.risk.board.verdict }}</text>
+              {%- assign pos = "20,14,-2|20,150,2|200,132,-1|380,226,2|200,336,1|20,336,-2" | split: "|" -%}
               {%- for n in t.risk.board.notes %}
               {%- assign xy = pos[forloop.index0] | split: "," -%}
               {%- assign stepmap = "1,1,3,3,4,4" | split: "," -%}

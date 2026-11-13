@@ -27,8 +27,8 @@ hero:
   cta_secondary: "Cocokkan dengan Scrum Guide"
   loop:
     label: "Diagram siklus belajar: rencanakan business outcome berikutnya, dev pertama, dipakai pengguna dan dev ulang, review business outcome. Dengan AI, dev pertama lewat dengan cepat, sehingga sebagian besar waktu tim tercurah untuk pengguna."
-    idea: "Rencana"
-    build: "Dev Pertama"
+    idea: "Plan"
+    build: "Dev pertama"
     use: "Dipakai pengguna + dev ulang"
     learn: "Review"
     idea_note: "Business Outcome berikutnya"
@@ -95,8 +95,9 @@ shift:
       now: "Leluasa fokus memfasilitasi interaksi Developers dengan pengguna, tempat asumsi divalidasi dan nilai tercipta."
 
 risk:
+  bridge: "Mengapa begitu fokus pada pengguna?"
   kicker: "Risiko"
-  title: "Kecepatan AI tanpa pengguna hanyalah Waterfall yang lebih cepat."
+  title: "Kecepatan AI tanpa pengguna: Waterfall yang lebih cepat."
   intro: "Membangun jadi cepat. Lihat apa yang mengisi waktu yang terbebas."
   prev: "Langkah sebelumnya"
   next: "Langkah berikutnya"
@@ -104,7 +105,7 @@ risk:
   before: "Sebelum AI"
   after: "Dengan AI"
   stages:
-    plan: "Rencana"
+    plan: "Plan"
     build: "Bangun"
     test: "Review"
   n3: "3 item"
@@ -119,11 +120,11 @@ risk:
     - "AI datang. Membangun tiga item yang sama hanya butuh sebagian kecil Sprint."
     - "Kebiasaannya tetap: pengguna baru melihat hasilnya di Sprint Review."
     - "Maka pembangunan membesar lagi mengisi Sprint, kini dengan sembilan item."
-    - "Orang yang me-review tetap sama, jadi hanya tiga dari sembilan yang ter-review. Enam item belum di-review: makin kurang percaya diri untuk menunjukkannya ke pengguna."
+    - "Proses dan durasi Review tetap sama, jadi hanya tiga dari sembilan yang ter-review. Enam item belum di-review: kurang percaya diri untuk menemui pengguna."
     - "Pengembangan bertenaga AI + kebiasaan Scrum pra-AI = Waterfall yang lebih cepat."
   board:
     title: "Cerita yang sama di papan tulis"
-    habit: "kebiasaan tak berubah: pengguna hanya di Review"
+    habit: "kebiasaan tak berubah:|pengguna hanya di Review"
     notes:
       - "Kecepatan membangun ↑"
       - "Waktu kosong di Sprint ↑"

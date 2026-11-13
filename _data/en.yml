@@ -27,7 +27,7 @@ hero:
   loop:
     label: "Diagram of the learning loop: plan the next business outcome, initial build, in users’ hands plus re-build, review the business outcome. With AI the initial build passes quickly, so most of the time goes to users."
     idea: "Plan"
-    build: "Initial Build"
+    build: "Initial build"
     use: "In users’ hands + re-build"
     learn: "Review"
     idea_note: "Next Business Outcome"
@@ -94,6 +94,7 @@ shift:
       now: "Free to focus on facilitating the interaction between Developers and users, the place where assumptions are validated and value is created."
 
 risk:
+  bridge: "Why so much focus on users?"
   kicker: "The risk"
   title: "AI speed without users is Waterfall, only faster."
   intro: "Building gets fast. Watch what fills the time that frees up."
@@ -118,11 +119,11 @@ risk:
     - "AI arrives. Building the same three items takes a fraction of the Sprint."
     - "The habit stays: users still see the work only at the Sprint Review."
     - "So building grows back to fill the Sprint, now with nine items."
-    - "Review has the same people as before, so only three of nine get reviewed. Six unreviewed items: less confidence to show users at all."
+    - "Review has the same process and duration as before, so only three of nine get reviewed. Six unreviewed items: less confidence to show users at all."
     - "AI-powered development + pre-AI Scrum habits = Waterfall, faster."
   board:
     title: "The same story on a whiteboard"
-    habit: "habit unchanged: users only at the Review"
+    habit: "habit unchanged:|users only at the Review"
     notes:
       - "Build speed ↑"
       - "Spare time in the Sprint ↑"

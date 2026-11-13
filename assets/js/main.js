@@ -18,42 +18,67 @@
   }
 
   /* ---- hero: the learning loop ----
-     The ball races through "build" and lingers "in users' hands". */
+     Path positions run clockwise from Plan (0): Initial build 0.25, users 0.5,
+     Review 0.75. Between the two meetings the line is orange, and its width
+     shows where the time goes: thin where the ball moves at 2x (initial build),
+     very thick where it moves at 1/4 (in users' hands). */
   const loop = document.getElementById("loop");
   if (loop) {
     const path = document.getElementById("loop-path");
     const ball = document.getElementById("loop-ball");
     const trailBox = document.getElementById("loop-trail");
+    const band = document.getElementById("loop-band");
     const labels = [...loop.querySelectorAll(".st")];
     const total = path.getTotalLength();
-    // [time share of a lap, path position reached at the end of it, station lit]
-    const legs = [
-      [0.07, 0.0, 0],  // rest at Idea
-      [0.16, 0.25, 1], // Idea -> Build: fast
-      [0.1, 0.44, 1],  // Build -> users: fast
-      [0.4, 0.56, 2],  // in users' hands: slow
-      [0.14, 0.75, 3], // -> Learn
-      [0.13, 1.0, 3],  // -> back to Idea
-    ];
-    const at = (u) => {
-      u = ((u % 1) + 1) % 1;
-      let t0 = 0, p0 = 0;
-      for (const [dt, p1, st] of legs) {
-        if (u <= t0 + dt) return { p: p0 + (p1 - p0) * smooth((u - t0) / dt), st };
-        t0 += dt; p0 = p1;
-      }
-      return { p: 1, st: 0 };
+    const pt = (p) => path.getPointAtLength((((p % 1) + 1) % 1) * total);
+
+    // time spent per unit of path (1 = the speed around Plan and Review)
+    const BAND = [0.125, 0.625]; // midway Plan→build to midway users→Review
+    const ramp = (p, a, b, from, to) => from + (to - from) * smooth(Math.min(1, Math.max(0, (p - a) / (b - a))));
+    const dens = (p) => {
+      if (p < 0.09 || p >= 0.66) return 1;
+      if (p < BAND[0]) return ramp(p, 0.09, BAND[0], 1, 0.5);
+      if (p < 0.29) return 0.5;                              // initial build: 2x speed
+      if (p < 0.46) return ramp(p, 0.29, 0.46, 0.5, 4);      // gradually slows down
+      if (p < BAND[1]) return 4;                             // in users' hands: 1/4 speed
+      return ramp(p, BAND[1], 0.66, 4, 1);
     };
-    const place = (el, p) => {
-      const pt = path.getPointAtLength(p * total);
-      el.setAttribute("cx", pt.x); el.setAttribute("cy", pt.y);
+    // lap time fraction -> path position
+    const N = 1000, cum = new Float64Array(N + 1);
+    for (let i = 0; i < N; i++) cum[i + 1] = cum[i] + dens((i + 0.5) / N);
+    const posAt = (u) => {
+      const target = (((u % 1) + 1) % 1) * cum[N];
+      let lo = 0, hi = N;
+      while (hi - lo > 1) { const m = (lo + hi) >> 1; if (cum[m] <= target) lo = m; else hi = m; }
+      return (lo + (target - cum[lo]) / (cum[lo + 1] - cum[lo])) / N;
     };
+    const station = (p) => (p >= 0.875 || p < 0.125 ? 0 : p < 0.375 ? 1 : p < 0.625 ? 2 : 3);
+
+    // the orange band, as wide as the time spent there
+    const width = (p) => 3 + ((dens(p) - 0.5) / 3.5) * 19;
+    const L = [], R = [], S = 160, e = 0.0015;
+    for (let i = 0; i <= S; i++) {
+      const p = BAND[0] + (BAND[1] - BAND[0]) * (i / S);
+      const a = pt(p - e), b = pt(p + e), c = pt(p), h = width(p) / 2;
+      const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+      const nx = -(b.y - a.y) / len, ny = (b.x - a.x) / len;
+      L.push((c.x + nx * h).toFixed(2) + " " + (c.y + ny * h).toFixed(2));
+      R.push((c.x - nx * h).toFixed(2) + " " + (c.y - ny * h).toFixed(2));
+    }
+    band.querySelector("path").setAttribute("d", "M" + L.join(" L") + " L" + R.reverse().join(" L") + "Z");
+    band.querySelectorAll("circle").forEach((cap, i) => {
+      const q = pt(BAND[i]);
+      cap.setAttribute("cx", q.x); cap.setAttribute("cy", q.y); cap.setAttribute("r", width(BAND[i]) / 2);
+    });
+
+    const place = (el, p) => { const q = pt(p); el.setAttribute("cx", q.x); el.setAttribute("cy", q.y); };
     const light = (st) => labels.forEach((l) => l.classList.toggle("on", +l.dataset.st === st));
+    const at = (u) => { const p = posAt(u); return { p, st: station(p) }; };
 
     if (reduced) {
       place(ball, 0.5); light(2);
     } else {
-      const LAP = 7600, TRAIL = 7;
+      const LAP = 10000, TRAIL = 7;
       const dots = [];
       for (let i = 0; i < TRAIL; i++) {
         const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
