@@ -29,6 +29,64 @@ layout: default
   </div>
 </section>
 
+<section class="core paper" id="core">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="kicker">{{ t.core.kicker }}</p>
+      <h2>{{ t.core.title }}</h2>
+      <p class="sec-intro">{{ t.core.intro }}</p>
+    </header>
+    <div class="core-grid" id="cycles">
+      <article class="cyc cyc-pre reveal">
+        <p class="cyc-era">{{ t.core.pre.era }}</p>
+        <h3>{{ t.core.pre.title }}</h3>
+        <div class="cyc-ring" role="img" aria-label="{{ t.core.pre.label }}">
+          {% include cycle-ring.html spec="plan,0.6,7.4|build,8.2,38.6|build,39.4,69.4|build,70.2,99.4" %}
+          <p class="cr-top">{{ t.core.top }}</p>
+          <div class="cr-card">
+            <p class="cc-label">{{ t.core.reviewed }}</p>
+            <ul class="cc-list">
+              {%- assign ats = "38.6,69.4,99.4" | split: "," -%}
+              {%- for item in t.core.pre.items %}
+              <li class="done" data-at="{{ ats[forloop.index0] }}"><i></i>{{ item }}</li>
+              {%- endfor %}
+            </ul>
+            <p class="cc-result">{{ t.core.pre.result }}</p>
+          </div>
+        </div>
+        <p class="cyc-ask">{{ t.core.asks }}</p>
+        <p class="cyc-q"><mark>{{ t.core.pre.question }}</mark></p>
+        <p class="cyc-body">{{ t.core.pre.body }}</p>
+      </article>
+      <article class="cyc cyc-post reveal">
+        <p class="cyc-era">{{ t.core.post.era }}</p>
+        <h3>{{ t.core.post.title }}</h3>
+        <div class="cyc-ring" role="img" aria-label="{{ t.core.post.label }}">
+          {% include cycle-ring.html spec="plan,0.6,5.4|build,6.2,10.6|users,11.4,27.4|validate,28.2,36.5|build,37.3,41.7|users,42.5,58.5|validate,59.3,67.6|build,68.4,72.8|users,73.6,89.6|validate,90.4,99.4" %}
+          <p class="cr-top">{{ t.core.top }}</p>
+          <div class="cr-card">
+            <p class="cc-label">{{ t.core.reviewed }}</p>
+            <p class="cc-metric">{{ t.core.post.metric }}</p>
+            <span class="cc-bar"><i style="width:100%"></i></span>
+            <p class="cc-val"><span data-val data-vals="0,7,14,20" data-ats="36.5,67.6,99.4">20</span><small> / 20</small></p>
+            <p class="cc-result">{{ t.core.post.result }}</p>
+          </div>
+        </div>
+        <p class="cyc-ask">{{ t.core.asks }}</p>
+        <p class="cyc-q"><mark>{{ t.core.post.question }}</mark></p>
+        <p class="cyc-body">{{ t.core.post.body }}</p>
+      </article>
+    </div>
+    <ul class="legend legend-ink core-legend">
+      {%- assign keys = "plan,build,users,validate" | split: "," -%}
+      {%- for k in keys %}
+      <li><i class="sw k-{{ k }}"></i>{{ t.core.legend[k] }}</li>
+      {%- endfor %}
+    </ul>
+    <p class="demo-note demo-note-ink">{{ t.core.note }}</p>
+  </div>
+</section>
+
 <section class="shift paper" id="shift">
   <div class="wrap">
     <header class="sec-head reveal">

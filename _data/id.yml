@@ -5,6 +5,7 @@ created_by: "Digagas oleh"
 skip: "Langsung ke konten"
 
 nav:
+  core: "Ide inti"
   shift: "Pergeseran"
   risk: "Risiko"
   length: "Panjang Sprint"
@@ -35,6 +36,39 @@ hero:
     build_note: "kini sebagian besar oleh AI"
     use_note: "waktu Anda tercurah di sini"
     center: "siklus belajar"
+
+core:
+  kicker: "Ide inti"
+  title: "Sprint-nya tetap. Yang di-review berubah."
+  intro: >-
+    Keduanya sama-sama satu Sprint yang diakhiri satu Sprint Review. Bedanya
+    ada pada apa yang mengisi Sprint, dan karena itu, apa yang bisa diperiksa
+    di Review.
+  top: "Sprint Review"
+  reviewed: "Yang di-review"
+  asks: "Sprint Review bertanya"
+  pre:
+    era: "Sprint pra-AI"
+    title: "Siklus Review Delivery"
+    label: "Sebuah Sprint digambarkan sebagai siklus. Membangun mengisi hampir seluruhnya, tiga item berurutan, dan Sprint Review di akhir memeriksa apakah item-item itu sudah di-deliver."
+    items: ["Halaman referral", "Email undangan", "Banner hadiah"]
+    result: "3 dari 3 selesai ✓"
+    question: "“Sudah selesai? Sesuai jadwal?”"
+    body: "Membangun mengisi seluruh Sprint. Pengguna baru bertemu hasilnya di Sprint Review, jadi Review memeriksa delivery: apa yang sudah dibangun dan apakah sesuai jadwal."
+  post:
+    era: "Sprint pasca-AI"
+    title: "Siklus Review Business Outcome"
+    label: "Sprint dengan panjang yang sama digambarkan sebagai siklus. Membangun hanya sebentar; tiga putaran bangun, pengguna, dan validasi mengisi Sprint, dan Sprint Review memeriksa apakah business outcome tercapai."
+    metric: "Pelanggan yang mengajak teman"
+    result: "Business outcome tercapai ✓"
+    question: "“Business outcome-nya tercapai?”"
+    body: "Membangun hanya butuh sebagian kecil Sprint. Sisanya untuk putaran bersama pengguna, jadi Review memeriksa business outcome: profit, rugi, keterlibatan pengguna."
+  legend:
+    plan: "rencana"
+    build: "bangun"
+    users: "pengguna"
+    validate: "validasi"
+  note: "Ilustrasi mekanismenya, bukan data hasil pengukuran."
 
 shift:
   kicker: "Pergeseran"

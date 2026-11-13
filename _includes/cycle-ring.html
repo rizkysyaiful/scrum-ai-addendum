@@ -1,0 +1,22 @@
+{%- comment -%}
+  One Sprint drawn as a ring, starting and ending at the Sprint Review (top).
+  include.spec: "kind,start,end|kind,start,end|..." in percent of the ring, clockwise.
+{%- endcomment -%}
+{%- assign d = "M150 44 A116 116 0 1 1 149.99 44" -%}
+{%- assign segs = include.spec | split: "|" -%}
+<svg viewBox="0 0 300 300" aria-hidden="true">
+  <path class="cr-path" pathLength="100" d="{{ d }}"/>
+  <g class="cr-base">
+    {%- for s in segs %}{% assign v = s | split: "," %}{% assign len = v[2] | minus: v[1] | round: 2 %}
+    <path class="k-{{ v[0] }}" pathLength="100" d="{{ d }}" style="stroke-dasharray:{{ len }} 100;stroke-dashoffset:-{{ v[1] }}"/>
+    {%- endfor %}
+  </g>
+  <g class="cr-fills">
+    {%- for s in segs %}{% assign v = s | split: "," %}{% assign len = v[2] | minus: v[1] | round: 2 %}
+    <path class="cr-fill k-{{ v[0] }}" data-a="{{ v[1] }}" data-b="{{ v[2] }}" pathLength="100" d="{{ d }}" style="stroke-dasharray:{{ len }} 100;stroke-dashoffset:-{{ v[1] }}"/>
+    {%- endfor %}
+  </g>
+  <circle class="cr-pulse" cx="150" cy="44" r="12"/>
+  <circle class="cr-station" cx="150" cy="44" r="6"/>
+  <circle class="cr-ball" cx="150" cy="44" r="10"/>
+</svg>

@@ -5,6 +5,7 @@ created_by: "Created by"
 skip: "Skip to content"
 
 nav:
+  core: "The core idea"
   shift: "The shift"
   risk: "The risk"
   length: "Sprint length"
@@ -34,6 +35,38 @@ hero:
     build_note: "mostly AI now"
     use_note: "your time goes here"
     center: "the learning loop"
+
+core:
+  kicker: "The core idea"
+  title: "The Sprint stays. What gets reviewed changes."
+  intro: >-
+    Both are one Sprint that ends in one Sprint Review. What differs is what
+    fills the Sprint, and so what the Review is able to check.
+  top: "Sprint Review"
+  reviewed: "What gets reviewed"
+  asks: "The Sprint Review asks"
+  pre:
+    era: "Pre-AI Sprint"
+    title: "Cycle of Delivery Review"
+    label: "A Sprint drawn as a cycle. Building fills almost all of it, three items one after another, and the Sprint Review at the end checks whether they were delivered."
+    items: ["Referral page", "Invite email", "Reward banner"]
+    result: "3 of 3 delivered ✓"
+    question: "“Is it done? Are we on schedule?”"
+    body: "Building fills the Sprint. Users meet the work only at the Sprint Review, so the Review checks delivery: what got built and whether it is on schedule."
+  post:
+    era: "Post-AI Sprint"
+    title: "Cycle of Business Outcome Review"
+    label: "A Sprint of the same length drawn as a cycle. Building is short; three rounds of building, users and validation fill the Sprint, and the Sprint Review checks whether the business outcome was reached."
+    metric: "Customers who invited a friend"
+    result: "Business outcome reached ✓"
+    question: "“Did we reach the business outcome?”"
+    body: "Building takes a fraction of the Sprint. The rest goes to rounds with users, so the Review checks the business outcome: profit, loss, user engagement."
+  legend:
+    plan: "plan"
+    build: "build"
+    users: "users"
+    validate: "validate"
+  note: "An illustration of the mechanism, not measured data."
 
 shift:
   kicker: "The shift"

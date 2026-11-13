@@ -79,6 +79,57 @@
     }
   }
 
+  /* ---- the core idea: two Sprints of the same length on one clock ----
+     Both reach the Sprint Review together; what fills the ring differs. */
+  const cycles = document.getElementById("cycles");
+  if (cycles) {
+    const rings = [...cycles.querySelectorAll(".cyc")].map((c) => {
+      const path = c.querySelector(".cr-path");
+      const val = c.querySelector("[data-val]");
+      return {
+        c, path, total: path.getTotalLength(),
+        ball: c.querySelector(".cr-ball"),
+        fills: [...c.querySelectorAll(".cr-fill")].map((el) => ({ el, a: +el.dataset.a, b: +el.dataset.b })),
+        marks: [...c.querySelectorAll("[data-at]")].map((el) => ({ el, at: +el.dataset.at })),
+        val, bar: c.querySelector(".cc-bar i"),
+        vals: val ? val.dataset.vals.split(",").map(Number) : [],
+        ats: val ? val.dataset.ats.split(",").map(Number) : [],
+      };
+    });
+    const render = (r, p, review) => {
+      const pt = r.path.getPointAtLength(p * r.total);
+      r.ball.setAttribute("cx", pt.x); r.ball.setAttribute("cy", pt.y);
+      const q = p * 100;
+      r.fills.forEach((f) => { f.el.style.strokeDasharray = Math.max(0, Math.min(f.b, q) - f.a) + " 100"; });
+      r.marks.forEach((m) => m.el.classList.toggle("done", q >= m.at));
+      if (r.val) {
+        const v = r.vals[r.ats.filter((a) => q >= a).length];
+        if (r.val.textContent !== String(v)) {
+          r.val.textContent = v;
+          r.bar.style.width = (v / r.vals[r.vals.length - 1]) * 100 + "%";
+        }
+      }
+      r.c.classList.toggle("at-review", review);
+    };
+    if (reduced || !("IntersectionObserver" in window)) {
+      rings.forEach((r) => render(r, 1, true));
+    } else {
+      const LAP = 10500, PLAN = 500, RUN = 8000; // RUN..LAP: holding at the Sprint Review
+      let start = 0, raf = 0;
+      const frame = (now) => {
+        const t = (now - start) % LAP;
+        const p = Math.min(1, Math.max(0, t - PLAN) / (RUN - PLAN));
+        if (!document.hidden) rings.forEach((r) => render(r, p, t >= RUN));
+        raf = requestAnimationFrame(frame);
+      };
+      rings.forEach((r) => render(r, 0, false));
+      new IntersectionObserver((e) => {
+        cancelAnimationFrame(raf);
+        if (e[0].isIntersecting) { start = performance.now(); raf = requestAnimationFrame(frame); }
+      }, { threshold: 0.35 }).observe(cycles);
+    }
+  }
+
   /* ---- the risk: build time shrinks, the habit stays, scope grows ---- */
   const demo = document.getElementById("demo");
   if (demo) {
