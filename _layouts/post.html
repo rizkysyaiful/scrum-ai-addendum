@@ -10,7 +10,7 @@ layout: default
       <h1 class="page-title">{{ page.title }}</h1>
       <p class="post-meta">
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
-        · {{ page.author | default: site.creators | join: ' & ' }}
+        · {% if page.authors %}{% assign names = '' | split: '' %}{% for k in page.authors %}{% assign wa = site.data.authors | where: 'key', k | first %}{% assign names = names | push: wa.name %}{% endfor %}{{ names | join: ' & ' }}{% else %}{{ page.author | default: site.creators | join: ' & ' }}{% endif %}
         {%- if other and page.ref %} · <a href="{{ other.url | relative_url }}" hreflang="{{ other.lang }}">{{ t.blog.other_lang }}</a>{% endif %}
       </p>
     </div>

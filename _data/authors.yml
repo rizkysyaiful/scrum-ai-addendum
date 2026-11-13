@@ -1,0 +1,18 @@
+# Writers shown on the blog page, in column/tab order. Posts list their writers
+# in front matter:  authors: [ricky, ahmad]
+- key: ricky
+  name: "Ricky Saif"
+  initials: "RS"
+  photo: /assets/images/ricky.jpg
+  url: "https://rickysaif.github.io"
+  bio:
+    en: "Developer at home in CEO meeting rooms, with 13 years of guiding organizations through team design and technology change. Founded AgileCampus.org and wrote Tiga Pilar Agile and Filosofi Agile dan Panduan Scrum."
+    id: "Developer yang terbiasa di ruang rapat CEO, dengan 13 tahun mendampingi organisasi dalam perubahan desain tim dan teknologi. Pendiri AgileCampus.org dan penulis Tiga Pilar Agile serta Filosofi Agile dan Panduan Scrum."
+- key: ahmad
+  name: "Ahmad Firdaus"
+  initials: "AF"
+  # photo: /assets/images/ahmad.jpg   # add a portrait here, then uncomment
+  url: "https://daus95.com"
+  bio:
+    en: "Technology enthusiast who has loved programming since childhood. CEO of eComindo, an IT development services company in Jakarta."
+    id: "Pecinta teknologi yang gemar programming sejak kecil. CEO eComindo, perusahaan jasa pengembangan IT di Jakarta."

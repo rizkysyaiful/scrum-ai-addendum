@@ -12,6 +12,7 @@ cat > "$file" <<POST
 title: "$title"
 description: "One or two sentences. Search engines and social cards show this."
 ref: $slug
+authors: [ricky]   # ricky, ahmad, or both
 ---
 
 Write the post here in Markdown.

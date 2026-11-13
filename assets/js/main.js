@@ -104,6 +104,26 @@
     }
   }
 
+  /* ---- blog: writer tabs on phones (both columns show on desktop) ---- */
+  const writers = document.getElementById("writers");
+  if (writers) {
+    const tabs = [...writers.querySelectorAll("[role=tab]")];
+    const panels = [...writers.querySelectorAll(".writer")];
+    const pick = (i, focus) => {
+      tabs.forEach((t, j) => { t.setAttribute("aria-selected", j === i); t.tabIndex = j === i ? 0 : -1; });
+      panels.forEach((p, j) => p.classList.toggle("on", j === i));
+      if (focus) tabs[i].focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", () => pick(i));
+      t.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") { e.preventDefault(); pick((i + 1) % tabs.length, true); }
+        if (e.key === "ArrowLeft") { e.preventDefault(); pick((i + tabs.length - 1) % tabs.length, true); }
+      });
+    });
+    pick(0);
+  }
+
   /* ---- the core idea: two Sprints of the same length on one clock ----
      Both reach the Sprint Review together; what fills the ring differs. */
   const cycles = document.getElementById("cycles");

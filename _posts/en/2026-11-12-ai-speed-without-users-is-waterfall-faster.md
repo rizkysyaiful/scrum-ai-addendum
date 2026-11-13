@@ -2,6 +2,7 @@
 title: "AI speed without users is Waterfall, only faster"
 description: "AI lets a team build in hours what used to take a Sprint. If nobody uses those updates until the Sprint Review, the team has rebuilt Waterfall with a faster engine."
 ref: ai-speed-waterfall
+authors: [ricky, ahmad]
 ---
 
 A team with good AI tooling can now build in an afternoon what used to fill a two-week Sprint. That sounds like pure gain. It is, as long as one thing keeps up with the building: real people using what was built.

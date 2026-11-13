@@ -2,6 +2,7 @@
 title: "Kecepatan AI tanpa pengguna hanyalah Waterfall yang lebih cepat"
 description: "AI membuat tim bisa membangun dalam hitungan jam apa yang dulu butuh satu Sprint. Kalau tidak ada yang memakai update itu sampai Sprint Review, tim sebenarnya sedang membangun ulang Waterfall dengan mesin yang lebih kencang."
 ref: ai-speed-waterfall
+authors: [ricky, ahmad]
 ---
 
 Tim dengan perkakas AI yang baik kini bisa membangun dalam satu sore apa yang dulu mengisi Sprint dua minggu. Kedengarannya murni keuntungan. Memang begitu, selama ada satu hal yang ikut mengimbangi kecepatan membangun: orang sungguhan yang memakai hasilnya.
