@@ -584,6 +584,7 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .fig .b-spec { fill: var(--pitch); }
 .fig .b-users { fill: var(--ok); }
 .fig .b-over { fill: #f0705a; }
+.fig-img img { display: block; width: 100%; max-width: 640px; height: auto; margin-inline: auto; border-radius: 10px; }
 @media (max-width: 560px) { .prose .fig { margin-inline: calc(8px - var(--gutter)); padding: 12px; border-radius: 12px; } }
 .post-cta { margin-top: 64px; padding: 28px; border-radius: 18px; background: var(--pitch); color: var(--chalk); display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
 .post-cta > div { flex: 1 1 320px; }
