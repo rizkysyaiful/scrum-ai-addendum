@@ -560,6 +560,31 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .prose pre code { background: none; padding: 0; }
 .prose img { border-radius: 12px; height: auto; }
 .prose hr { border: 0; border-top: 1px dashed var(--rule); margin-block: 2.2em; }
+/* inline diagrams in posts */
+.prose .fig { margin-block: 2em; padding: clamp(14px, 2.4vw, 22px); background: var(--sheet); border: 1.5px solid var(--ink); border-radius: 16px; }
+.fig svg { display: block; width: 100%; max-width: 560px; height: auto; margin-inline: auto; overflow: visible; }
+.fig figcaption { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--rule); font-family: var(--body); font-style: normal; font-size: 0.88rem; line-height: 1.5; color: var(--ink-dim); }
+.fig .f-box { fill: var(--paper); stroke: var(--ink); stroke-width: 2; }
+.fig .f-hot { fill: var(--ball); stroke: var(--ink); stroke-width: 2; }
+.fig .f-dark { fill: var(--pitch); stroke: var(--ink); stroke-width: 2; }
+.fig .f-t { font-family: var(--body); font-weight: 700; font-size: 17px; fill: var(--ink); }
+.fig .f-s { font-family: var(--body); font-weight: 400; font-size: 14px; fill: var(--ink-dim); }
+.fig .f-k { font-family: var(--body); font-weight: 700; font-size: 12px; letter-spacing: 0.12em; fill: var(--green); }
+.fig .f-on-dark { fill: var(--chalk); }
+.fig .f-red { fill: #b3261e; font-weight: 700; }
+.fig .f-line { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.fig .f-thick { fill: none; stroke: var(--ball); stroke-width: 7; }
+.fig .f-dash { fill: none; stroke: #b3261e; stroke-width: 2.5; stroke-dasharray: 7 6; }
+.fig .f-org { fill: none; stroke: var(--green); stroke-width: 2; stroke-dasharray: 8 6; }
+.fig .f-limit { stroke: var(--ink); stroke-width: 2; stroke-dasharray: 5 5; }
+.fig .f-x { stroke: #b3261e; stroke-width: 4; stroke-linecap: round; }
+.fig .f-head { fill: var(--ink); }
+.fig .f-head-hot { fill: var(--ball); }
+.fig .b-build { fill: var(--ball); }
+.fig .b-spec { fill: var(--pitch); }
+.fig .b-users { fill: var(--ok); }
+.fig .b-over { fill: #f0705a; }
+@media (max-width: 560px) { .prose .fig { margin-inline: calc(8px - var(--gutter)); padding: 12px; border-radius: 12px; } }
 .post-cta { margin-top: 64px; padding: 28px; border-radius: 18px; background: var(--pitch); color: var(--chalk); display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
 .post-cta > div { flex: 1 1 320px; }
 .post-cta-title { font-family: var(--display); font-stretch: 75%; font-weight: 800; font-size: 1.45rem; line-height: 1.1; margin-bottom: 8px; }
